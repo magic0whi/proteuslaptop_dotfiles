@@ -35,7 +35,6 @@
 !.config/systemd/user/nekoray.service
 !.config/systemd/user/picom.service
 !.config/systemd/user/polybar.service
-!.config/systemd/user/redshift.service
 !.config/systemd/user/xorg@.service
 !.config/systemd/user/xorg@.socket
 !.config/sxhkd/
