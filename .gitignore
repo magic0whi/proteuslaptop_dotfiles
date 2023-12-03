@@ -19,6 +19,8 @@
 !.config/picom/picom.conf
 !.config/polybar/
 !.config/polybar/config.ini
+!.config/ranger/
+!.config/ranger/rc.conf
 !.config/rofi/
 !.config/rofi/config.rasi
 !.config/rofi/themes/
