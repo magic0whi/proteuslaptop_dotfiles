@@ -8,3 +8,7 @@ WantedBy
 ExecReload
 arctrig
 NavyBlue
+GPG
+builtins
+args
+WireShark
