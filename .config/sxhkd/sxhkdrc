@@ -16,7 +16,7 @@ super + Escape
 
 # turn off screen
 alt + l
-    sleep 0.2; xset dpms force off
+    sleep 0.2; xset dpms force off; slock
 
 # take a screenshot
 Print

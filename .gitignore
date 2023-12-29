@@ -17,6 +17,9 @@
 !.config/mpv/mpv.conf
 !.config/picom/
 !.config/picom/picom.conf
+!.config/pipewire/
+!.config/pipewire/pipewire.conf.d/
+!.config/pipewire/pipewire.conf.d/alsa-dmix.conf
 !.config/polybar/
 !.config/polybar/config.ini
 !.config/ranger/
@@ -42,6 +45,9 @@
 !.config/systemd/user/xorg@.socket
 !.config/sxhkd/
 !.config/sxhkd/sxhkdrc
+!.config/wireplumber/
+!.config/wireplumber/main.lua.d/
+!.config/wireplumber/main.lua.d/90-enable-all.lua
 !.gnupg/
 !.gnupg/dirmngr.conf
 !.ssh/
