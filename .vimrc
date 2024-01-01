@@ -111,6 +111,8 @@ Plug 'honza/vim-snippets' "Snippets Collection
 Plug 'morhetz/gruvbox' "Theme
 call plug#end()
 
+let g:gutentags_cache_dir='~/.cache/vim/ctags'
+
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
