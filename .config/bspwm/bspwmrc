@@ -1,11 +1,79 @@
 #!/bin/sh
+internal_monitor=eDP-1
+external_monitor=DP-1
+external_monitor_left=true
 
-xrdb -merge ${HOME}/.Xresources
+desktops_push() {
+    # Move first 5 desktops to external monitor
+    for desktop in $(bspc query -D -m $internal_monitor | sed 5q); do
+        bspc desktop $desktop -m $external_monitor
+    done
+
+    # Remove default desktop "Desktop" auto created by bspwm
+    bspc desktop Desktop -r
+}
+
+desktops_pull() {
+    # Add a temporary desktop because a minimum one desktop is required per monitor
+    bspc monitor $external_monitor -a temp_desktop
+
+    # Move all desktops to internal monitor
+    for desktop in $(bspc query -D -m $external_monitor); do
+        bspc desktop $desktop -m $internal_monitor
+    done
+
+    bspc monitor $external_monitor -r
+    # Delete temporary desktop
+    #bspc desktop temp_desktop -r
+
+    # Reorder desktops
+    bspc monitor $internal_monitor -o 1 2 3 4 5 6 7 8 9 10
+}
+
+if [ -n "$(xrandr -q | grep -e "^$external_monitor connected")" ]; then
+    # Set xrandr rules for docked setup
+    xrandr --output $internal_monitor --auto --primary --output $external_monitor --auto --left-of $internal_monitor
+
+    [ $(bspc query -D -m $external_monitor | wc -l) -ne 5 ] && desktops_push
+
+    if [ $external_monitor_left = true ]; then
+        bspc wm -O $external_monitor $internal_monitor
+    else
+        bspc wm -O $internal_monitor $external_monitor
+    fi
+    systemctl --user start polybar@$external_monitor.service
+elif [ $(bspc query -D -m $internal_monitor | wc -l) -ne 10 ]; then
+    systemctl --user stop polybar@$external_monitor.service
+    desktops_pull
+    # Set xrandr rules for mobile setup, this let xrandr disable DP-1 so bspwm don't create redundant desktop
+    xrandr --output $internal_monitor --auto --primary --output $external_monitor --off
+fi
+
+# Bspwm is first run initialization
+if [ $1 = 0 ]; then
+    # Arrange first 5 desktops to external monitor
+    if [ -n "$(xrandr -q | grep -e "^$external_monitor connected")" ]; then
+        # Reorder monitor list
+        if [ $external_monitor_left = true ]; then
+            bspc monitor $external_monitor -d 1 2 3 4 5
+            bspc monitor $internal_monitor -d 6 7 8 9 10
+            bspc wm -O $external_monitor $internal_monitor
+        else
+            bspc monitor $internal_monitor -d 1 2 3 4 5
+            bspc monitor $external_monitor -d 6 7 8 9 10
+            bspc wm -O $internal_monitor $external_monitor
+        fi
+	systemctl --user start polybar@$external_monitor.service
+    else
+        bspc monitor $internal_monitor -d 1 2 3 4 5 6 7 8 9 10
+    fi
+fi
+
+
+xrdb -merge $HOME/.Xresources
 
 sxhkd &
-feh --no-fehbg --bg-max ${HOME}/Pictures/kanagawa-inverted-darker.jpg &
-
-bspc monitor -d I II III IV V VI VII VIII IX X
+feh --no-fehbg --bg-max $HOME/Pictures/kanagawa-inverted-darker.jpg &
 
 bspc config border_width         4
 bspc config window_gap           10
