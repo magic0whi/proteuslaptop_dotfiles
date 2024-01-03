@@ -1,11 +1,11 @@
 [Unit]
-Description=A fast and easy-to-use status bar
+Description=A fast and easy-to-use status bar, for monitor %i
 Documentation=man:polybar(1)
 After=gui-session.target
 PartOf=gui-session.target
 
 [Service]
-ExecStart=/usr/bin/polybar
+ExecStart=/usr/bin/polybar %i
 ExecReload=/usr/bin/polybar-msg cmd restart
 
 [Install]
