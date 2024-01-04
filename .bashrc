@@ -61,7 +61,7 @@ alias Copng="Co -target image/png"
 alias mpv='mpv --player-operation-mode=pseudo-gui'
 
 # Dotfiles
-alias gitdot='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias gitdot='/usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
