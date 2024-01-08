@@ -18,4 +18,3 @@ ExecReload=/usr/bin/bspc wm -r
 
 [Install]
 WantedBy=gui-session-pre.target
-RequiredBy=gui-session.target
