@@ -30,31 +30,12 @@ desktops_pull() {
     bspc monitor $internal_monitor -o 1 2 3 4 5 6 7 8 9 10
 }
 
-if [ -n "$(xrandr -q | grep -e "^$external_monitor connected")" ]; then
-    # Set xrandr rules for docked setup
-    xrandr --output $internal_monitor --auto --primary --output $external_monitor --auto --left-of $internal_monitor
-
-    [ $(bspc query -D -m $external_monitor | wc -l) -ne 5 ] && desktops_push
-
-    if [ $external_monitor_left = true ]; then
-        bspc wm -O $external_monitor $internal_monitor
-    else
-        bspc wm -O $internal_monitor $external_monitor
-    fi
-    systemctl --user start polybar@$external_monitor.service
-elif [ $(bspc query -D -m $internal_monitor | wc -l) -ne 10 ]; then
-    systemctl --user stop polybar@$external_monitor.service
-    desktops_pull
-    # Set xrandr rules for mobile setup, this let xrandr disable DP-1 so bspwm don't create redundant desktop
-    xrandr --output $internal_monitor --auto --primary --output $external_monitor --off
-fi
-
-# Bspwm is first run initialization
+# Bspwm first run initialization
 if [ $1 = 0 ]; then
     # Arrange first 5 desktops to external monitor
     if [ -n "$(xrandr -q | grep -e "^$external_monitor connected")" ]; then
         # Reorder monitor list
-        if [ $external_monitor_left = true ]; then
+        if [ $external_monitor_left = "true" ]; then
             bspc monitor $external_monitor -d 1 2 3 4 5
             bspc monitor $internal_monitor -d 6 7 8 9 10
             bspc wm -O $external_monitor $internal_monitor
@@ -63,12 +44,29 @@ if [ $1 = 0 ]; then
             bspc monitor $external_monitor -d 6 7 8 9 10
             bspc wm -O $internal_monitor $external_monitor
         fi
-	systemctl --user start polybar@$external_monitor.service
     else
         bspc monitor $internal_monitor -d 1 2 3 4 5 6 7 8 9 10
     fi
 fi
 
+if [ -n "$(xrandr -q | grep -e "^$external_monitor connected")" ]; then
+    # Set xrandr rules for docked setup
+    xrandr --output $internal_monitor --auto --primary --output $external_monitor --auto --left-of $internal_monitor
+
+    [ $(bspc query -D -m $external_monitor | wc -l) -ne 5 ] && desktops_push
+
+    if [ $external_monitor_left = "true" ]; then
+        bspc wm -O $external_monitor $internal_monitor
+    else
+        bspc wm -O $internal_monitor $external_monitor
+    fi
+    systemctl --user --no-block start polybar@$external_monitor.service
+elif [ $(bspc query -D -m $internal_monitor | wc -l) -ne 10 ]; then
+    systemctl --user stop polybar@$external_monitor.service
+    desktops_pull
+    # Set xrandr rules for mobile setup, this let xrandr disable DP-1 so bspwm don't create redundant desktop
+    xrandr --output $internal_monitor --auto --primary --output $external_monitor --off
+fi
 
 xrdb -merge $HOME/.Xresources
 
