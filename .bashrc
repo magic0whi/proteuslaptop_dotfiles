@@ -21,7 +21,6 @@ alias ssh="TERM=xterm-256color ssh"
 
 # -l load math lib, -q is quiet
 alias bc="bc -lq"
-# Custom alias end
 
 # -R print the control symbol in raw, -N show line number
 export LESS="-R -N"
@@ -63,6 +62,13 @@ alias mpv='mpv --player-operation-mode=pseudo-gui'
 # Dotfiles
 alias gitdot='/usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 
+cpr() {
+  rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 "$@"
+}
+mvr() {
+  rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"
+}
+
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
@@ -72,6 +78,7 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+# Custom alias end
 
 if [ -z "${SHELL}" ]; then
     # Bash Shell coloring start

@@ -21,3 +21,9 @@ ramdisk
 Zsh
 DRM
 Iptables
+nvidia
+picom
+xf86
+intel
+GLX
+backend
