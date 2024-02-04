@@ -27,3 +27,4 @@ xf86
 intel
 GLX
 backend
+DSDT

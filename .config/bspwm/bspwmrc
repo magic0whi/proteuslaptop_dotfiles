@@ -1,6 +1,6 @@
 #!/bin/sh
 internal_monitor=eDP-1
-external_monitor=DP-1
+external_monitor=DP-3
 external_monitor_left=true
 
 desktops_push() {
@@ -64,7 +64,7 @@ if [ -n "$(xrandr -q | grep -e "^$external_monitor connected")" ]; then
 elif [ $(bspc query -D -m $internal_monitor | wc -l) -ne 10 ]; then
     systemctl --user stop polybar@$external_monitor.service
     desktops_pull
-    # Set xrandr rules for mobile setup, this let xrandr disable DP-1 so bspwm don't create redundant desktop
+    # Set xrandr rules for mobile setup, this let xrandr disable external_monitor so bspwm don't create redundant desktop
     xrandr --output $internal_monitor --auto --primary --output $external_monitor --off
 fi
 
@@ -73,6 +73,7 @@ xrdb -merge $HOME/.Xresources
 sxhkd &
 feh --no-fehbg --bg-max $HOME/Pictures/kanagawa-inverted-darker.jpg &
 
+# Rules based on the (<WM_CLASS[1]>)[:(<WM_CLASS[0]>)[:(<WM_NAME>], which is the second string within the WM_CLASS property. To determine the class name, run `xprop | grep WM_CLASS`
 bspc config border_width         4
 bspc config window_gap           10
 
@@ -81,10 +82,15 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+bspc rule -a firefox desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
+
+screen_height=$(xrandr -q | head -n1 | awk '{print $10}' | cut -d, -f1)
+PiP_height=$(($screen_height / 3))
+PiP_width=$(($PiP_height * 2))
+bspc rule -a firefox:Toolkit:Picture-in-Picture state=floating sticky=on rectangle=${PiP_width}x$PiP_height
 
 systemd-notify --pid=$(pgrep bspwm) --ready --status="bspwmrc running completed"
