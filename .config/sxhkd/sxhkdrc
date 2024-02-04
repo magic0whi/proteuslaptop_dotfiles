@@ -33,27 +33,10 @@ XF86AudioMicMute
     amixer -D default sset Capture,0 capture toggle
 
 XF86MonBrightnessDown
-    BrightnessStep=9600; \
-    CurrentBrightness=$(cat /sys/class/backlight/intel_backlight/brightness); \
-    StagedBrightness=$((${CurrentBrightness} - ${BrightnessStep})); \
-    if [ ${CurrentBrightness} -le ${BrightnessStep} ]; \
-    then \
-        echo 0 > /sys/class/backlight/intel_backlight/brightness; \
-    else \
-        echo ${StagedBrightness} > /sys/class/backlight/intel_backlight/brightness; \
-    fi
+    busctl --user call org.clight.clight /org/clight/clight org.clight.clight IncBl "d" 0.05
  
 XF86MonBrightnessUp
-    BrightnessStep=9600; \
-    CurrentBrightness=$(cat /sys/class/backlight/intel_backlight/brightness); \
-    StagedBrightness=$((${CurrentBrightness} + ${BrightnessStep})); \
-    MaxBrightness=$(cat /sys/class/backlight/intel_backlight/max_brightness); \
-    if [ ${StagedBrightness} -ge ${MaxBrightness} ]; \
-    then \
-        echo ${MaxBrightness} > /sys/class/backlight/intel_backlight/brightness; \
-    else \
-        echo ${StagedBrightness} > /sys/class/backlight/intel_backlight/brightness; \
-    fi
+    busctl --user call org.clight.clight /org/clight/clight org.clight.clight DecBl "d" 0.05
 
 #
 # bspwm hotkeys

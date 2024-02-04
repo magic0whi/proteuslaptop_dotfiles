@@ -28,3 +28,5 @@ intel
 GLX
 backend
 DSDT
+PiP
+Polybar
