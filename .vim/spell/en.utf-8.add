@@ -20,3 +20,7 @@ KVM
 fi
 systemctl
 ExecStartPre
+Zsh
+bashrc
+EndSection
+intel
