@@ -69,7 +69,7 @@ elif [ $(bspc query -D -m $internal_monitor | wc -l) -ne 10 ]; then
 fi
 
 # Touchscreen in multi-head setup
-input --map-to-output 'GXTP7936:00 27C6:0123' $internal_monitor
+xinput --map-to-output 'GXTP7936:00 27C6:0123' $internal_monitor
 xrdb -merge $HOME/.Xresources
 
 sxhkd &

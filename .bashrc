@@ -78,6 +78,10 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+
+diff() {
+    command diff --text --unified --new-file --color=always "$@"
+}
 # Custom alias end
 
 if [ -z "${SHELL}" ]; then
