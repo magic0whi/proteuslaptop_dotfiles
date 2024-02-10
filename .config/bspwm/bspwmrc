@@ -70,6 +70,8 @@ fi
 
 # Touchscreen in multi-head setup
 xinput --map-to-output 'GXTP7936:00 27C6:0123' $internal_monitor
+# Don't disable touchpad while typing
+xinput set-prop 'SYNA2BA6:00 06CB:CF00 Touchpad' 'libinput Disable While Typing Enabled' 0
 xrdb -merge $HOME/.Xresources
 
 sxhkd &
