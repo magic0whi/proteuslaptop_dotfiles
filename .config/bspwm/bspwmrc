@@ -85,12 +85,15 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Inkscape desktop='^1'
 bspc rule -a firefox desktop='^2'
+bspc rule -a steam desktop='^3' follow=on
+bspc rule -a gamescope desktop='^3'
+bspc rule -a gimp desktop='^8' state=floating follow=on
 bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-bspc rule -a Zathura state=tiled
+bspc rule -a kupfer.py focus=on
+bspc rule -a screenkey manage=off
+bspc rule -a zathura state=tiled
 
 screen_height=$(xrandr -q | head -n1 | awk '{print $10}' | cut -d, -f1)
 PiP_height=$(($screen_height / 3))
