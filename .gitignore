@@ -9,6 +9,8 @@
 !.zshrc
 !.Xresources
 !.config/
+!.config/alacritty/
+!.config/alacritty/alacritty.toml
 !.config/bspwm/
 !.config/bspwm/bspwmrc
 !.config/gtk-3.0/

@@ -88,7 +88,8 @@ bspc config gapless_monocle      true
 bspc rule -a Inkscape desktop='^1'
 bspc rule -a firefox desktop='^2'
 bspc rule -a steam desktop='^3' follow=on
-bspc rule -a gamescope desktop='^3'
+bspc rule -a gamescope desktop='^4' follow=on
+bspc rule -a gamescope desktop='^5' follow=on
 bspc rule -a gimp desktop='^8' state=floating follow=on
 bspc rule -a mplayer2 state=floating
 bspc rule -a kupfer.py focus=on
