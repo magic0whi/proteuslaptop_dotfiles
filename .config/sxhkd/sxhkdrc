@@ -16,7 +16,7 @@ super + Escape
 
 # turn off screen
 alt + @l
-    xset dpms force off; slock
+    xset dpms force off; echo 0 > /sys/class/leds/platform::kbd_backlight/brightness; slock
 
 # take a screenshot
 Print
