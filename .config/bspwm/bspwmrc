@@ -68,7 +68,7 @@ done
 
 while [ $current_desktop_index -lt ${#desktops[@]} ]; do
     # Arrange remain desktops to the last monitor
-    ${desktops[$current_desktop_index]}
+    bspc desktop ${desktops[$current_desktop_index]} -m $monitor
 
     current_desktop_index=$((current_desktop_index+1))
 done
