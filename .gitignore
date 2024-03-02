@@ -15,6 +15,9 @@
 !.config/bspwm/bspwmrc
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
+!.config/helix/
+!.config/helix/config.toml
+!.config/helix/languages.toml
 !.config/mpv/
 !.config/mpv/mpv.conf
 !.config/picom/
