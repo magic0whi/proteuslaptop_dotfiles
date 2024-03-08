@@ -11,6 +11,8 @@
 !.config/
 !.config/alacritty/
 !.config/alacritty/alacritty.toml
+!.config/dconf/
+!.config/dconf/user
 !.config/bspwm/
 !.config/bspwm/bspwmrc
 !.config/gtk-3.0/
