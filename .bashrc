@@ -169,7 +169,7 @@ if [ -z "${SHELL}" ]; then
    _git_prompt
 fi
 
-export EDITOR=vim
+export EDITOR=helix
 
 # Using ripgrep in fzf
 if type rg &> /dev/null; then
