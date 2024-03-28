@@ -11,6 +11,8 @@
 !.config/
 !.config/bspwm/
 !.config/bspwm/bspwmrc
+!.config/btop/
+!.config/btop/btop.conf
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
 !.config/mpv/
