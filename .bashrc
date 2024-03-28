@@ -80,7 +80,7 @@ man() {
 }
 
 diff() {
-    command diff --text --unified --new-file --color=always "$@"
+    command diff --text --unified --new-file --color=auto "$@"
 }
 # Custom alias end
 
