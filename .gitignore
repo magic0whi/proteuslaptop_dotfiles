@@ -8,15 +8,18 @@
 !.vimrc
 !.zshrc
 !.Xresources
+
 !.config/
 !.config/alacritty/
 !.config/alacritty/alacritty.toml
-!.config/dconf/
-!.config/dconf/user
 !.config/bspwm/
 !.config/bspwm/bspwmrc
 !.config/btop
 !.config/btop/btop.conf
+!.config/dconf/
+!.config/dconf/user
+!.config/environment.d/
+!.config/environment.d/*
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
 !.config/helix/
@@ -46,7 +49,6 @@
 !.config/systemd/user/fcitx5.service
 !.config/systemd/user/gui-session-pre.target
 !.config/systemd/user/gui-session.target
-!.config/systemd/user/nekoray.service
 !.config/systemd/user/picom.service
 !.config/systemd/user/polkit-gnome.service
 !.config/systemd/user/polybar@.service
@@ -68,6 +70,3 @@
 !.vim/spell/en.utf-8.add
 !Pictures/
 !Pictures/kanagawa-inverted-darker.jpg
-
-!.config/environment.d/
-!.config/environment.d/*
