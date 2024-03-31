@@ -13,6 +13,8 @@
 !.config/bspwm/bspwmrc
 !.config/btop/
 !.config/btop/btop.conf
+!.config/environment.d/
+!.config/environment.d/*
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
 !.config/mpv/
@@ -56,5 +58,3 @@
 !Pictures/
 !Pictures/kanagawa-inverted-darker.jpg
 
-!.config/environment.d/
-!.config/environment.d/*
