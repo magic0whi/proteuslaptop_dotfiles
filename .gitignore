@@ -8,6 +8,7 @@
 !.vimrc
 !.zshrc
 !.Xresources
+
 !.config/
 !.config/bspwm/
 !.config/bspwm/bspwmrc
@@ -38,7 +39,6 @@
 !.config/systemd/user/fcitx5.service
 !.config/systemd/user/gui-session-pre.target
 !.config/systemd/user/gui-session.target
-!.config/systemd/user/nekoray.service
 !.config/systemd/user/picom.service
 !.config/systemd/user/polkit-gnome.service
 !.config/systemd/user/polybar@.service
