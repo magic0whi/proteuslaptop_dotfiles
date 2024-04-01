@@ -1,11 +1,10 @@
 [Unit]
 Description=X Window Manager (bspwm)
 Documentation=man:bspwm(1)
-Requires=gui-session-pre.target
+PartOf=gui-session-pre.target
 After=gui-session-pre.target
+BindsTo=gui-session.target
 Before=gui-session.target
-Wants=gui-session.target
-PartOf=gui-session.target
 
 [Service]
 Type=notify

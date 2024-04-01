@@ -1,7 +1,6 @@
 [Unit]
 Description=X compositor that may fix tearing issues
 Documentation=man:picom(1)
-After=gui-session.target
 PartOf=gui-session.target
 
 [Service]

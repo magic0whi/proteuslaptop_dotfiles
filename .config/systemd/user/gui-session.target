@@ -1,5 +1,5 @@
 [Unit]
-Description=GUI Session
-After=gui-session-pre.target
-#Wants=xdg-desktop-autostart.target
+Description=Current graphical user session
+Documentation=man:systemd.special(7)
 RefuseManualStart=yes
+StopWhenUnneeded=yes

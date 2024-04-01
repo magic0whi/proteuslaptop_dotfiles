@@ -1,7 +1,6 @@
 [Unit]
 Description=A C daemon that turns your webcam into a light sensor.
 Documentation=man:clight(1)
-After=gui-session.target
 PartOf=gui-session.target
 
 [Service]
