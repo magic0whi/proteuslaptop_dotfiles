@@ -2,6 +2,7 @@
 Description=X compositor that may fix tearing issues
 Documentation=man:picom(1)
 PartOf=gui-session.target
+After=gui-session.target
 
 [Service]
 ExecStart=/usr/bin/picom

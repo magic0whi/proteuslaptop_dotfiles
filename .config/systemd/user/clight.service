@@ -2,6 +2,7 @@
 Description=A C daemon that turns your webcam into a light sensor.
 Documentation=man:clight(1)
 PartOf=gui-session.target
+After=gui-session.target
 
 [Service]
 ExecStart=/usr/bin/clight

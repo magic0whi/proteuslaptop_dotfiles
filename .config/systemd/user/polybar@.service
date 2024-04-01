@@ -2,6 +2,7 @@
 Description=A fast and easy-to-use status bar, for monitor %i
 Documentation=man:polybar(1)
 PartOf=gui-session.target
+After=gui-session.target
 
 [Service]
 ExecStart=/usr/bin/polybar %i

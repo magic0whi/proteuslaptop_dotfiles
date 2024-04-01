@@ -1,6 +1,7 @@
 [Unit]
 Description=Legacy polkit authentication agent for GNOME
 PartOf=gui-session.target
+After=gui-session.target
 
 [Service]
 ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
