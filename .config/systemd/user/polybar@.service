@@ -6,7 +6,3 @@ PartOf=gui-session.target
 [Service]
 ExecStart=/usr/bin/polybar %i
 ExecReload=/usr/bin/polybar-msg cmd restart
-
-[Install]
-WantedBy=gui-session.target
-
