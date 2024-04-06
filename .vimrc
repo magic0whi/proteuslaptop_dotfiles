@@ -36,10 +36,6 @@ set smartindent "Smart indent react to the syntax of the code
 setlocal spell
 set spelllang=en_us,cjk "Current for cjk Vim is just ignore spell check for these characters
 
-"Disable mouse
-set mouse=
-set ttymouse=
-
 set pastetoggle=<F2>
 "Settings End
 
@@ -89,7 +85,7 @@ nmap ga <Plug>(EasyAlign)
 "Key binding End
 
 "Let hardtime run default
-"let g:hardtime_default_on = 1
+let g:hardtime_default_on = 1
 
 set tabstop=4
 set shiftwidth=4

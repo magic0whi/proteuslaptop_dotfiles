@@ -16,7 +16,7 @@ super + Escape
 
 # Turn off screen/keyboard light and lock screen, trigger on key release to prevent the key event wake screen immediately
 super + @q
-    echo 0 > /sys/class/leds/platform::kbd_backlight/brightness; slock
+    echo 0 > /sys/class/leds/platform::kbd_backlight/brightness; slock xset dpms force suspend
 
 # Suspend
 super + e
