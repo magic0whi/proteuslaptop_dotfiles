@@ -33,6 +33,7 @@
 !.config/rofi/themes/rounded-blue-dark.rasi
 !.config/systemd/
 !.config/systemd/user/
+!.config/systemd/user/aria2cd.service
 !.config/systemd/user/bspwm.env
 !.config/systemd/user/bspwm.service
 !.config/systemd/user/clight.service
