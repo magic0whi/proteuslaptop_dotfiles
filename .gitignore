@@ -10,6 +10,9 @@
 !.Xresources
 
 !.config/
+!.config/GIMP/
+!.config/GIMP/2.10/
+!.config/GIMP/2.10/gimprc
 !.config/alacritty/
 !.config/alacritty/alacritty.toml
 !.config/bspwm/
