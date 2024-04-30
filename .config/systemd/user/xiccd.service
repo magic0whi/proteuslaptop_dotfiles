@@ -1,0 +1,12 @@
+[Unit]
+Description=X color management daemon
+Documentation=man:xiccd(8)
+PartOf=gui-session.target
+After=gui-session.target
+
+[Service]
+ExecStart=/usr/bin/xiccd
+
+[Install]
+WantedBy=gui-session.target
+
