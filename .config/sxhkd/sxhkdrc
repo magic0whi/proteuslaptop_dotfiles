@@ -23,8 +23,8 @@ super + e
     systemctl suspend
 
 # Hibernate
-super + r
-    systemctl hibernate
+#super + r
+#    systemctl hibernate
 
 # Take a screenshot
 Print
