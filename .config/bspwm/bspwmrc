@@ -84,7 +84,7 @@ xinput set-prop 'SYNA2BA6:00 06CB:CF00 Touchpad' 'libinput Disable While Typing 
 xrdb -merge $HOME/.Xresources
 
 sxhkd &
-feh --no-fehbg --bg-max $HOME/Pictures/kanagawa-inverted-darker.jpg &
+feh --no-fehbg --bg-max $HOME/Sync/Wallpaper_Avator_Collections/kanagawa-inverted-darker.jpg &
 
 # Rules based on the (<WM_CLASS[1]>)[:(<WM_CLASS[0]>)[:(<WM_NAME>], which is the second string within the WM_CLASS property. To determine the class name, run `xprop | grep WM_CLASS`
 bspc config border_width         4

@@ -7,7 +7,6 @@
 !.tmux.conf
 !.vimrc
 !.zshrc
-!.Xresources
 
 !.config/
 !.config/GIMP/
@@ -15,8 +14,6 @@
 !.config/GIMP/2.10/gimprc
 !.config/alacritty/
 !.config/alacritty/alacritty.toml
-!.config/bspwm/
-!.config/bspwm/bspwmrc
 !.config/btop
 !.config/btop/btop.conf
 !.config/dconf/
@@ -26,8 +23,11 @@
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
 !.config/helix/
-!.config/helix/config.toml
-!.config/helix/languages.toml
+!.config/helix/*
+!.config/hypr/
+!.config/hypr/*
+!.config/mako/
+!.config/mako/config
 !.config/mpv/
 !.config/mpv/mpv.conf
 !.config/picom/
@@ -35,8 +35,6 @@
 !.config/pipewire/
 !.config/pipewire/pipewire.conf.d/
 !.config/pipewire/pipewire.conf.d/alsa-dmix.conf
-!.config/polybar/
-!.config/polybar/config.ini
 !.config/ranger/
 !.config/ranger/rc.conf
 !.config/rofi/
@@ -46,20 +44,13 @@
 !.config/rofi/themes/rounded-blue-dark.rasi
 !.config/systemd/
 !.config/systemd/user/
-!.config/systemd/user/bspwm.env
-!.config/systemd/user/bspwm.service
 !.config/systemd/user/clight.service
 !.config/systemd/user/fcitx5.service
-!.config/systemd/user/gui-session-pre.target
-!.config/systemd/user/gui-session.target
-!.config/systemd/user/picom.service
+!.config/systemd/user/hyprland-session.target
 !.config/systemd/user/polkit-gnome.service
-!.config/systemd/user/polybar@.service
 !.config/systemd/user/xiccd.service
-!.config/systemd/user/xorg@.service
-!.config/systemd/user/xorg@.socket
-!.config/sxhkd/
-!.config/sxhkd/sxhkdrc
+!.config/waybar/
+!.config/waybar/*
 !.config/wireplumber/
 !.config/wireplumber/main.lua.d/
 !.config/wireplumber/main.lua.d/90-enable-all.lua

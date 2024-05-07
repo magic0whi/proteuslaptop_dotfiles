@@ -1,5 +1,0 @@
-[Unit]
-Description=Session service which should run early before the graphical session is brought up
-Documentation=man:systemd.special(7)
-RefuseManualStart=yes
-StopWhenUnneeded=yes

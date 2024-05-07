@@ -1,0 +1,13 @@
+border-size=2
+border-radius=8
+default-timeout=5000
+
+[urgency=low]
+border-color=#cccccc
+
+[urgency=normal]
+border-color=#d08770
+
+[urgency=high]
+border-color=#bf616a
+default-timeout=0
