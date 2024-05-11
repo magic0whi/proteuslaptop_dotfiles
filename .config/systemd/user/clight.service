@@ -6,6 +6,8 @@ After=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/clight
+Restart=on-failure
+Slice=background.slice
 
 [Install]
 WantedBy=graphical-session.target

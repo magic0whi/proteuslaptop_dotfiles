@@ -6,6 +6,9 @@ After=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/xiccd
+Restart=on-failure
+RestartSec=3sec
+Slice=background.slice
 
 [Install]
 WantedBy=graphical-session.target

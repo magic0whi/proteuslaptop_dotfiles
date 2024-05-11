@@ -47,8 +47,10 @@
 !.config/systemd/user/clight.service
 !.config/systemd/user/fcitx5.service
 !.config/systemd/user/hyprland-session.target
-!.config/systemd/user/polkit-gnome.service
 !.config/systemd/user/xiccd.service
+!.config/systemd/user/plasma-polkit-agent.service
+!.config/systemd/user/waybar.service.d/
+!.config/systemd/user/waybar.service.d/override.conf
 !.config/waybar/
 !.config/waybar/*
 !.config/wireplumber/

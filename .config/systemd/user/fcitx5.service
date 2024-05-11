@@ -5,7 +5,8 @@ After=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/fcitx5
-RemainAfterExit=yes
+Restart=always
+Slice=background.slice
 
 [Install]
 WantedBy=graphical-session.target
