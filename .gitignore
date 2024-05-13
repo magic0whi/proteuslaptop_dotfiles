@@ -4,6 +4,7 @@
 !.drirc
 !.fonts.conf
 !.gitignore
+!.gtkrc-2.0
 !.tmux.conf
 !.vimrc
 !.zshrc
@@ -22,6 +23,8 @@
 !.config/environment.d/*
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
+!.config/gtk-4.0/
+!.config/gtk-4.0/settings.ini
 !.config/helix/
 !.config/helix/*
 !.config/hypr/
