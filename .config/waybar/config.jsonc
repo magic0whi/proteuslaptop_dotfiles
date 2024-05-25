@@ -1,0 +1,162 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // waybar at top layer
+  // "position": "bottom", // waybar position (top|bottom|left|right)
+  "height": 30, // waybar height (to be removed for auto height)
+  // "width": 1280, // waybar width
+  "spacing": 4, // gaps between modules (4px)
+  // choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/submap"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "pulseaudio",
+    "network",
+    "power-profiles-daemon",
+    "cpu",
+    "memory",
+    "temperature",
+    "backlight",
+    "keyboard-state",
+    "battery",
+    "clock",
+    "tray"
+  ],
+  // modules configuration
+  "hyprland/workspaces": {
+    "format": "{name}"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰛨",
+      "deactivated": "󱠀"
+    }
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "format-alt": "{:%y-%m-%d}",
+    "interval": 1,
+    "tooltip-format": "<big>{:%y %b}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "cpu": {
+    "format": "{usage}% 󰻠",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}% 󰍛"
+  },
+  "temperature": {
+    //"thermal-zone": 0,
+    "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°c 󰸁",
+    "format": "{temperatureC}°c {icon}",
+    "format-icons": [
+      "󱃃",
+      "󰔏",
+      "󰔏"
+    ]
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "on-scroll-up": "busctl call org.clightd.clightd /org/clightd/clightd/Backlight2 org.clightd.clightd.Backlight2 Raise 'd(du)' '0.02' '0.00' '0'",
+    "on-scroll-down": "busctl call org.clightd.clightd /org/clightd/clightd/Backlight2 org.clightd.clightd.Backlight2 Lower 'd(du)' '0.02' '0.00' '0'",
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "󰽤",
+      "󰽧",
+      "󰽡",
+      "󰽨",
+      "󰽢"
+    ]
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "󰌐",
+      "unlocked": "󰌌"
+    }
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰢝",
+    "format-plugged": "{capacity}% 󱰻",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // an empty format will hide the module
+    // "format-full": "",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂"
+    ]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "power profile: {profile}\ndriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "󰈐",
+      "performance": "󱠇",
+      "balanced": "󰗑",
+      "power-saver": "󱤅"
+    }
+  },
+  "network": {
+    "interface": "wlp1s0", // (optional) to force the use of this interface
+    "format-wifi": "{essid} ({signalStrength}%) 󰤨",
+    "format-ethernet": "{ipaddr}/{cidr} 󰈀 ",
+    "tooltip-format": "{ifname} via {gwaddr} 󱇢",
+    "format-linked": "{ifname} (no ip) 󰲊",
+    "format-disconnected": "disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
+    "format-bluetooth-muted": "󰖁 {icon}󰂯 {format_source}",
+    "format-muted": "󰖁 {format_source}",
+    "format-source": "{volume}% 󰍬",
+    "format-source-muted": "󰍭",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󱡏",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "portable": "󰄜",
+      "car": "󰄍",
+      "default": [
+        "󰝞",
+        "󰕿",
+        "󰖀",
+        "󰕾",
+        "󱄡"
+      ]
+    },
+    "on-click": "pactl"
+  }
+}

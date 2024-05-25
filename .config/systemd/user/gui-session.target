@@ -1,5 +1,0 @@
-[Unit]
-Description=GUI Session
-After=gui-session-pre.target
-#Wants=xdg-desktop-autostart.target
-RefuseManualStart=yes

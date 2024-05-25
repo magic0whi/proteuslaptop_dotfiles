@@ -1,0 +1,15 @@
+[Unit]
+Description=KDE PolicyKit Authentication Agent
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/lib/polkit-kde-authentication-agent-1
+BusName=org.kde.polkit-kde-authentication-agent-1
+Slice=background.slice
+TimeoutStopSec=5sec
+Restart=on-failure
+RestartSec=3sec
+
+[Install]
+WantedBy=graphical-session.target
