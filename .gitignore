@@ -38,8 +38,6 @@
 !.config/pipewire/
 !.config/pipewire/pipewire.conf.d/
 !.config/pipewire/pipewire.conf.d/alsa-dmix.conf
-!.config/ranger/
-!.config/ranger/rc.conf
 !.config/rofi/
 !.config/rofi/config.rasi
 !.config/rofi/themes/
@@ -56,16 +54,11 @@
 !.config/waybar/
 !.config/waybar/*
 !.config/wireplumber/
-!.config/wireplumber/main.lua.d/
-!.config/wireplumber/main.lua.d/90-enable-all.lua
+!.config/wireplumber/wireplumber.conf.d/
+!.config/wireplumber/wireplumber.conf.d/80-disable-alsa.conf
 !.gnupg/
 !.gnupg/dirmngr.conf
 !.ssh/
 !.ssh/config
-!.vim/
-!.vim/autoload/
-!.vim/autoload/plug.vim
-!.vim/spell/
-!.vim/spell/en.utf-8.add
 !Pictures/
 !Pictures/kanagawa-inverted-darker.jpg
