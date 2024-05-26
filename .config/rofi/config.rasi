@@ -1,5 +1,5 @@
 configuration {
-    dpi: 150;
+    dpi: 128;
     modes: "window,drun,ssh,combi";
     combi-modes: "window,drun,ssh";
     show-icons: true;

@@ -1,5 +1,8 @@
 [Unit]
 Description=aria2 Daemon
+Documentation=man:aria2c(1)
+Requires=mnt-storage3.mount
+After=mnt-storage3.mount
 
 [Service]
 Type=forking
