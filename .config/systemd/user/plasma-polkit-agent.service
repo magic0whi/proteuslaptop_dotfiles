@@ -2,6 +2,7 @@
 Description=KDE PolicyKit Authentication Agent
 PartOf=graphical-session.target
 After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 ExecStart=/usr/lib/polkit-kde-authentication-agent-1
