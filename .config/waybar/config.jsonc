@@ -2,7 +2,7 @@
 {
   // "layer": "top", // waybar at top layer
   // "position": "bottom", // waybar position (top|bottom|left|right)
-  "height": 30, // waybar height (to be removed for auto height)
+  "height": 24, // waybar height (to be removed for auto height)
   // "width": 1280, // waybar width
   "spacing": 4, // gaps between modules (4px)
   // choose the order of the modules
@@ -71,6 +71,7 @@
     // "device": "acpi_video1",
     "on-scroll-up": "busctl call org.clightd.clightd /org/clightd/clightd/Backlight2 org.clightd.clightd.Backlight2 Raise 'd(du)' '0.02' '0.00' '0'",
     "on-scroll-down": "busctl call org.clightd.clightd /org/clightd/clightd/Backlight2 org.clightd.clightd.Backlight2 Lower 'd(du)' '0.02' '0.00' '0'",
+    "smooth-scrolling-threshold": 3,
     "format": "{percent}% {icon}",
     "format-icons": [
       "󰽤",
@@ -99,7 +100,7 @@
     "format-full": "{capacity}% {icon}",
     "format-charging": "{capacity}% 󰢝",
     "format-plugged": "{capacity}% 󱰻",
-    "format-alt": "{time} {icon}",
+    "format-alt": "{time} {power}W {icon}",
     // "format-good": "", // an empty format will hide the module
     // "format-full": "",
     "format-icons": [
@@ -157,6 +158,7 @@
         "󱄡"
       ]
     },
-    "on-click": "pactl"
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   }
 }

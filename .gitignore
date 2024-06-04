@@ -38,6 +38,8 @@
 !.config/pipewire/
 !.config/pipewire/pipewire.conf.d/
 !.config/pipewire/pipewire.conf.d/alsa-dmix.conf
+!.config/psd/
+!.config/psd/psd.conf
 !.config/rofi/
 !.config/rofi/config.rasi
 !.config/rofi/themes/
