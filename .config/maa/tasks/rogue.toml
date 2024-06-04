@@ -1,0 +1,26 @@
+[[tasks]]
+type = "Roguelike"
+
+[tasks.params]
+theme = "Sami"
+
+# Don't enter the second floor when the investment mode is enabled.
+investment_with_more_score = true
+
+mode = "1"
+squad = "后勤分队"
+roles = "取长补短"
+use_support = true
+use_nonfriend_support = true
+
+#[tasks.params.mode]
+#default = 1
+#description = "a fighting mode (0: point , 1: investment)"
+
+[tasks.params.core_char]
+alternatives = ["百炼嘉维尔", "焰影苇草"]
+default_index = 2
+description = "a character"
+
+[[tasks]]
+type = "CloseDown"

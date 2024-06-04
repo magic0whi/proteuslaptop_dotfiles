@@ -29,6 +29,8 @@
 !.config/helix/*
 !.config/hypr/
 !.config/hypr/*
+!.config/maa/
+!.config/maa/**
 !.config/mako/
 !.config/mako/config
 !.config/mpv/
