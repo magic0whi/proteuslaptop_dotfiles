@@ -1,0 +1,48 @@
+[[tasks]]
+type = "StartUp"
+params = { client_type = "Official", start_game_enabled = true }
+
+# Mall after 18:00
+[[tasks]]
+type = "Mall"
+[tasks.params]
+shopping = true
+credit_fight = true
+select_formation = 4
+buy_first = ["招聘许可", "龙门币"]
+blacklist = ["碳", "家具", "加急许可"]
+[[tasks.variants]]
+condition = { type = "Time", start = "18:00:00" }
+
+# Recruit after 18:00
+[[tasks]]
+type = "Recruit"
+
+[tasks.params]
+refresh = true
+select = [4, 5]
+confirm = [3, 4, 5]
+expedite = true
+skip_robot = false
+recruitment_time = { '3' = 540 }
+report_to_penguin = true
+penguin_id = "084310065"
+
+[[tasks.variants]]
+condition = { type = "Time", start = "18:00:00" }
+params = { times = 4 }
+
+# consume refresh times
+[[tasks.variants]]
+params = { times = 1 }
+
+[[tasks]]
+type = "Award"
+
+[tasks.params]
+award = true
+mail = true
+recruit = true
+orundum = true
+mining = true
+specialaccess = true
