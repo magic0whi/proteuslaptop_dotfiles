@@ -22,8 +22,8 @@ default_index = 2
 description = "a character"
 
 [tasks.params.squad]
-alternatives = ["指挥分队", "集群分队", "后勤分队", "特训分队"]
-default_index = 4
+alternatives = ["指挥分队", "集群分队", "后勤分队", "特训分队", "矛头分队", "永恒狩猎分队", "生活至上分队", "科学主义分队"]
+default_index = 8
 description = "squad choose"
 
 [[tasks]]

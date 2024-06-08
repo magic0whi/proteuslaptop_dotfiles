@@ -26,7 +26,7 @@ expedite = true
 skip_robot = false
 recruitment_time = { '3' = 540 }
 report_to_penguin = true
-penguin_id = "084310065"
+penguin_id = "260887694"
 
 [[tasks.variants]]
 condition = { type = "Time", start = "18:00:00" }
