@@ -4,6 +4,6 @@ address = "192.168.240.112"
 [instance_options]
 touch_mode = "ADB"
 
-#[static_options]
-#cpu_ocr = false
-#gpu_ocr = 1
+[static_options]
+cpu_ocr = true
+#gpu_ocr = 0
