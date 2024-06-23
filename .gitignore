@@ -64,5 +64,6 @@
 !.gnupg/dirmngr.conf
 !.ssh/
 !.ssh/config
+!.ssh/authorized_keys
 !Pictures/
 !Pictures/kanagawa-inverted-darker.jpg

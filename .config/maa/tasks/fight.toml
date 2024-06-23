@@ -5,7 +5,7 @@ strategy = "merge"
 
 [tasks.params]
 report_to_penguin = true
-penguin_id = "260887694"
+penguin_id = "001620106"
 
 # use all expiring medicine on Sunday Evening
 [[tasks.variants]]

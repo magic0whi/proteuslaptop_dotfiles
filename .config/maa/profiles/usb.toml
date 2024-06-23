@@ -1,0 +1,9 @@
+[connection]
+device = "68U5T18201026096"
+
+[instance_options]
+touch_mode = "ADB"
+
+[static_options]
+cpu_ocr = true
+#gpu_ocr = 0

@@ -1,7 +1,3 @@
-[[tasks]]
-type = "StartUp"
-params = { client_type = "Official", start_game_enabled = true }
-
 # Mall after 18:00
 [[tasks]]
 type = "Mall"
@@ -26,7 +22,7 @@ expedite = true
 skip_robot = false
 recruitment_time = { '3' = 540 }
 report_to_penguin = true
-penguin_id = "260887694"
+penguin_id = "001620106"
 
 [[tasks.variants]]
 condition = { type = "Time", start = "18:00:00" }
