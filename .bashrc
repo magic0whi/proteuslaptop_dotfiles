@@ -84,7 +84,7 @@ diff() {
 }
 # Custom alias end
 
-if [ -z "${SHELL}" ]; then
+if [ "$SHELL" = "/usr/bin/bash" ]; then
     # Bash Shell coloring start
     # Reset
     Color_Off=$'\e[m'       # Text Reset
