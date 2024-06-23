@@ -84,7 +84,7 @@ diff() {
 }
 # Custom alias end
 
-if [ -z "${SHELL}" ]; then
+if [ "$SHELL" = "/usr/bin/bash" ]; then
     # Bash Shell coloring start
     # Reset
     Color_Off=$'\e[m'       # Text Reset
@@ -164,7 +164,7 @@ if [ -z "${SHELL}" ]; then
     function _git_prompt() {
         # Git prompt
         source /usr/share/git/completion/git-prompt.sh
-        PS1='${BRed}\u${Color_Off}@${BGreen}\h${Color_Off} ${BBlue}\w${Color_Off} ${BCyan}$(__git_ps1 "(%s)")${Color_Off}${BGreen}\$${Color_Off} '
+        PS1='${BRed}\u${Color_Off}@${BYellow}\h${Color_Off} ${BBlue}\w${Color_Off} ${BCyan}$(__git_ps1 "(%s)")${Color_Off}${BGreen}\$${Color_Off} '
     }
    _git_prompt
 fi

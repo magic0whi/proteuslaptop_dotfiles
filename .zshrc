@@ -88,7 +88,7 @@ On_IWhite=$'\e[0;107m'   # White
 #prompt redhat
 source /usr/share/git/completion/git-prompt.sh
 # %3~ Show folder levels max to 3
-setopt PROMPT_SUBST; PS1='[%{$BRed%}%n%{$Color_Off%}@%{$BGreen%}%m%{$Color_Off%} %{$BBlue%}%3~%{$Color_Off%} %{$BCyan%}$(__git_ps1 "(%s)")%{$Color_Off%}]%{$BGreen%}%(#.#.$)%{$Color_Off%} '
+setopt PROMPT_SUBST; PS1='[%{$BRed%}%n%{$Color_Off%}@%{$BYellow%}%m%{$Color_Off%} %{$BBlue%}%3~%{$Color_Off%} %{$BCyan%}$(__git_ps1 "(%s)")%{$Color_Off%}]%{$BGreen%}%(#.#.$)%{$Color_Off%} '
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
