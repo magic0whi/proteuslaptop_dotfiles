@@ -1,7 +1,7 @@
 {
   "author": "Proteus",
   "description": "Proteus's Custom Profile",
-  "id": 1717341090219012,
+  "id": 1717694952930328,
   "title": "3 Times A day",
   "buildingType": 243,
   "planTimes": "3班",
@@ -160,9 +160,9 @@
             "operators": [
               "史都华德",
               "白面鸮",
-              "赫默",
-              "伊芙利特",
-              "格劳克斯"
+              "缠丸",
+              "慕斯",
+              "拜松"
             ],
             "sort": true,
             "autofill": false
@@ -356,10 +356,13 @@
             "skip": false,
             "operators": [
               "布丁",
-              "普罗旺斯"
+              "普罗旺斯",
+              "格劳克斯",
+              "伊芙利特",
+              "赫默"
             ],
             "sort": true,
-            "autofill": true
+            "autofill": false
           },
           {
             "skip": false,
