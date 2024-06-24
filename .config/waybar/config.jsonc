@@ -23,7 +23,6 @@
     "temperature",
     "backlight",
     "keyboard-state",
-    "battery",
     "clock",
     "tray"
   ],
@@ -89,31 +88,6 @@
       "locked": "󰌐",
       "unlocked": "󰌌"
     }
-  },
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰢝",
-    "format-plugged": "{capacity}% 󱰻",
-    "format-alt": "{time} {power}W {icon}",
-    // "format-good": "", // an empty format will hide the module
-    // "format-full": "",
-    "format-icons": [
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂"
-    ]
   },
   "power-profiles-daemon": {
     "format": "{icon}",
