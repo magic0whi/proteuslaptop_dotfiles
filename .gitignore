@@ -2,7 +2,6 @@
 
 !.bashrc
 !.drirc
-!.fonts.conf
 !.gitignore
 !.gtkrc-2.0
 !.tmux.conf
@@ -19,6 +18,9 @@
 !.config/dconf/user
 !.config/environment.d/
 !.config/environment.d/*
+!.config/fontconfig/
+!.config/fontconfig/conf.d/
+!.config/fontconfig/conf.d/*
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
 !.config/gtk-4.0/

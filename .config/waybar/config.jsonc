@@ -2,9 +2,9 @@
 {
   // "layer": "top", // waybar at top layer
   // "position": "bottom", // waybar position (top|bottom|left|right)
-  "height": 30, // waybar height (to be removed for auto height)
+  //"height": 30, // waybar height (to be removed for auto height)
   // "width": 1280, // waybar width
-  "spacing": 2, // gaps between modules (4px)
+  "spacing": -4, // gaps between modules (4px)
   // choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
@@ -44,12 +44,12 @@
   },
   "clock": {
     "format": "{:%H:%M:%S}",
-    "format-alt": "{:%y-%m-%d}",
+    "format-alt": "{:%m-%d-%y}",
     "interval": 1,
     "tooltip-format": "<big>{:%y %b}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "cpu": {
-    "format": "{usage}% 󰻠",
+    "format": "{usage}% <span size='large' rise='-3000'>󰻠</span>",
     "tooltip": false
   },
   "memory": {
@@ -81,7 +81,7 @@
     ]
   },
   "keyboard-state": {
-    "numlock": true,
+    "numlock": false,
     "capslock": true,
     "format": "{name} {icon}",
     "format-icons": {
@@ -115,7 +115,7 @@
     ]
   },
   "power-profiles-daemon": {
-    "format": "{icon}",
+    "format": "<span size='large' rise='0'>{icon}</span>&#8203;",
     "tooltip-format": "power profile: {profile}\ndriver: {driver}",
     "tooltip": true,
     "format-icons": {
@@ -140,8 +140,8 @@
     "format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
     "format-bluetooth-muted": "󰖁 {icon}󰂯 {format_source}",
     "format-muted": "󰖁 {format_source}",
-    "format-source": "{volume}% 󰍬",
-    "format-source-muted": "󰍭",
+    "format-source": "{volume}% <span size='large' rise='-3000'>󰍬</span>",
+    "format-source-muted": "<span size='large' rise='-3000'>󰍭</span>",
     "format-icons": {
       "headphone": "󰋋",
       "hands-free": "󱡏",

@@ -1,6 +1,6 @@
 * {
     font-family: Material Design Icons, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 window#waybar {
@@ -109,11 +109,13 @@ button:hover {
 
 #clock {
     background-color: #64727D;
+    padding: 0 5px;
 }
 
 #battery {
     background-color: #ffffff;
     color: #000000;
+    padding: 0 5px;
 }
 
 #battery.charging, #battery.plugged {
@@ -140,7 +142,7 @@ button:hover {
 }
 
 #power-profiles-daemon {
-    padding-right: 0px;
+    padding: 0 5px;
 }
 
 #power-profiles-daemon.performance {
@@ -165,10 +167,12 @@ label:focus {
 #cpu {
     background-color: #2ecc71;
     color: #000000;
+    padding: 0 5px;
 }
 
 #memory {
     background-color: #9b59b6;
+    padding: 0 5px;
 }
 
 #disk {
@@ -177,10 +181,12 @@ label:focus {
 
 #backlight {
     background-color: #90b1b1;
+    padding: 0 5px;
 }
 
 #network {
     background-color: #2980b9;
+    padding: 0 5px;
 }
 
 #network.disconnected {
@@ -208,6 +214,7 @@ label:focus {
 
 #temperature {
     background-color: #f0932b;
+    padding: 0 5px;
 }
 
 #temperature.critical {
@@ -216,6 +223,7 @@ label:focus {
 
 #tray {
     background-color: #2980b9;
+    padding: 0 5px;
 }
 
 #tray > .passive {
@@ -229,6 +237,7 @@ label:focus {
 
 #idle_inhibitor {
     background-color: #2d3436;
+    padding: 0 5px;
 }
 
 #idle_inhibitor.activated {
