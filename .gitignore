@@ -51,8 +51,6 @@
 !.config/systemd/user/fcitx5.service
 !.config/systemd/user/hyprland-session.target
 !.config/systemd/user/plasma-polkit-agent.service
-!.config/systemd/user/syncthing.service.d/
-!.config/systemd/user/syncthing.service.d/override.conf
 !.config/systemd/user/waybar.service.d/
 !.config/systemd/user/waybar.service.d/override.conf
 !.config/waybar/

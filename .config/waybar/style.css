@@ -140,7 +140,7 @@ button:hover {
 }
 
 #power-profiles-daemon {
-    padding-right: 4px;
+    padding-right: 0px;
 }
 
 #power-profiles-daemon.performance {
