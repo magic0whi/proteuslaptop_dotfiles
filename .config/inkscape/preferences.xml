@@ -116,12 +116,14 @@
        gradientdrag="1">
       <eventcontext
          id="rect"
-         style="fill:blue;"
-         usecurrent="1" />
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         usecurrent="0"
+         width="261.406240388164"
+         height="84.3419473002262" />
       <eventcontext
          id="3dbox"
-         style="stroke:none;stroke-linejoin:round;"
-         usecurrent="1">
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         usecurrent="0">
         <side
            id="XYfront"
            style="fill:#8686bf;stroke:none;stroke-linejoin:round;"
@@ -149,18 +151,22 @@
       </eventcontext>
       <eventcontext
          id="arc"
-         style="fill:red;"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
          end="0"
          start="0"
-         usecurrent="1" />
+         usecurrent="0"
+         rx="188.976377952757"
+         ry="188.976377952758" />
       <eventcontext
          id="star"
-         magnitude="5"
-         style="fill:yellow;"
-         usecurrent="1" />
+         magnitude="3"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         usecurrent="0"
+         proportion="0.500000012637121"
+         isflatsided="1" />
       <eventcontext
          id="spiral"
-         style="fill:none;stroke:black"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
          expansion="1"
          usecurrent="0" />
     </group>
@@ -171,27 +177,27 @@
          id="pencil"
          tolerance="15.0"
          selcue="1"
-         style="stroke-width:1px;"
-         usecurrent="1"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         usecurrent="0"
          average_all_sketches="1"
          pressure="0" />
       <eventcontext
          id="pen"
          mode="drag"
          selcue="1"
-         style="stroke-width:1px;"
-         usecurrent="1" />
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         usecurrent="0" />
     </group>
     <eventcontext
        id="calligraphic"
-       style="fill:black;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        mass="2"
        angle="30"
        width="15.118"
        thinning="10"
        flatness="-90"
        cap_rounding="0.0"
-       usecurrent="1"
+       usecurrent="0"
        tracebackground="0"
        usepressure="1"
        usetilt="0"
@@ -285,7 +291,7 @@
     <eventcontext
        id="eraser"
        mode="1"
-       style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        mass="3.00"
        drag="1"
        angle="30"
@@ -302,16 +308,16 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="pt"
+       unit="mm"
        show_bbox="1" />
     <eventcontext
        id="text"
-       usecurrent="1"
+       usecurrent="0"
        gradientdrag="1"
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66669976px;line-height:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:1.13385999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        selcue="1" />
     <eventcontext
        id="nodes"
@@ -345,8 +351,8 @@
        force="0.2"
        fidelity="0.5"
        usepressure="1"
-       style="fill:red;stroke:none;"
-       usecurrent="1"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13385827;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       usecurrent="0"
        doh="1"
        dos="1"
        dol="1"
@@ -386,7 +392,8 @@
     <eventcontext
        id="connector"
        style="fill:none;fill-rule:evenodd;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-width:1px;stroke-linecap:butt;"
-       selcue="1" />
+       selcue="1"
+       curvature="0" />
     <eventcontext
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
@@ -537,6 +544,8 @@
     <group
        id="CMS"
        visible="1" />
+    <group
+       id="OKHSL" />
   </group>
   <group
      id="embedded">
@@ -591,7 +600,7 @@
     <group
        id="preferences"
        state="1"
-       page="47" />
+       page="3" />
     <group
        id="gradienteditor" />
     <group
@@ -940,7 +949,8 @@
        partialdynamic="0" />
     <group
        id="font"
-       unitType="2" />
+       unitType="2"
+       substitutedlg="0" />
     <group
        id="boot"
        theme="colorful">
@@ -956,15 +966,62 @@
        id="threading" />
     <group
        id="ruler" />
+    <group
+       id="snapping"
+       snap-global-toggle="1"
+       snap-bbox="1"
+       snap-bbox-edge="1"
+       snap-bbox-corner="1"
+       snap-bbox-edge-midpoint="0"
+       snap-bbox-center="0"
+       simple-snap-bbox="1"
+       snap-others="1"
+       snap-object-midpoint="0"
+       snap-rotation-center="0"
+       snap-text-baseline="1"
+       snap-path-mask="1"
+       snap-path-clip="1"
+       snap-page-border="1"
+       snap-page-margin="1"
+       snap-grid="1"
+       snap-grid-line="1"
+       snap-guide="1"
+       snap-node-category="1"
+       snap-path="1"
+       snap-path-intersection="0"
+       snap-node-cusp="1"
+       snap-node-smooth="1"
+       snap-line-midpoint="1"
+       snap-line-tangential="0"
+       snap-line-perpendicular="0"
+       simple-snap-nodes="1"
+       snap-alignment="0"
+       snap-alignment-self="0"
+       snap-distribution="0"
+       simple-snap-alignment="0" />
   </group>
   <group
      id="extensions"
      org.inkscape.output.png.inkscape.png_bitdepth="99"
      org.inkscape.output.png.inkscape.png_compression="6"
-     org.inkscape.output.png.inkscape.png_antialias="2" />
+     org.inkscape.output.png.inkscape.png_antialias="2"
+     org.inkscape.effect.func_plot.isoscale="0"
+     org.inkscape.effect.func_plot.polar="0"
+     org.inkscape.effect.func_plot.samples="32"
+     org.inkscape.effect.func_plot.fponum="0"
+     org.inkscape.effect.func_plot.remove="0"
+     org.inkscape.effect.func_plot.drawaxis="1"
+     org.inkscape.effect.func_plot.__live_effect__="0"
+     org.inkscape.effect.func_plot.fofx="sin(x)"
+     org.inkscape.effect.func_plot.endpts="0"
+     org.inkscape.effect.func_plot.xstart="-2"
+     org.inkscape.effect.func_plot.times2pi="1"
+     org.inkscape.effect.func_plot.xend="2"
+     org.inkscape.effect.func_plot.ybottom="-5"
+     org.inkscape.effect.func_plot.ytop="5" />
   <group
      id="desktop"
-     style="fill:#000000">
+     style="fill:none;stroke-width:0;-inkscape-font-specification:IPAexMincho;font-family:IPAexMincho">
     <group
        width="1522"
        height="922"
@@ -992,7 +1049,7 @@
      id="toolbox"
      icononly="1"
      secondary="1"
-     simplesnap="1"
+     simplesnap="0"
      small="1">
     <group
        id="tools"
@@ -1103,4 +1160,10 @@
        symbolicWarningColor="4279865599"
        symbolicErrorColor="10086143" />
   </group>
+  <group
+     id="color_scales"
+     wheel_vis_hsl="1" />
+  <group
+     id="gradient-edit"
+     stoplist="1" />
 </inkscape>
