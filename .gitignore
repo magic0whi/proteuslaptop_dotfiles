@@ -31,6 +31,8 @@
 !.config/helix/*
 !.config/hypr/
 !.config/hypr/*
+!.config/inkscape/
+!.config/inkscape/preferences.xml
 !.config/kdeglobals
 !.config/mako/
 !.config/mako/config
@@ -62,6 +64,11 @@
 !.config/wireplumber/wireplumber.conf.d/80-disable-alsa.conf
 !.gnupg/
 !.gnupg/dirmngr.conf
+!.local/
+!.local/share/
+!.local/share/applications/
+!.local/share/applications/firefox.desktop
+!.local/share/applications/org.inkscape.Inkscape.desktop
 !.ssh/
 !.ssh/config
 !Pictures/
