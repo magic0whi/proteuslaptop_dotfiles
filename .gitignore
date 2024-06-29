@@ -47,7 +47,6 @@
 !.config/rofi/themes/rounded-blue-dark.rasi
 !.config/systemd/
 !.config/systemd/user/
-!.config/systemd/user/clight.service
 !.config/systemd/user/fcitx5.service
 !.config/systemd/user/hyprland-session.target
 !.config/systemd/user/plasma-polkit-agent.service
@@ -65,4 +64,5 @@
 !.ssh/
 !.ssh/config
 !Pictures/
-!Pictures/kanagawa-inverted-darker.jpg
+!Pictures/avatar.png
+!Pictures/background.png

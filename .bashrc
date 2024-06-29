@@ -51,10 +51,9 @@ alias Fy="sudo pacman -Fy"
 alias Sy="sudo pacman -Sy"
 
 # Clipboard
-alias clipboard="xclip -selection clipboard"
-alias Ci="clipboard -i"
-alias Co="clipboard -o"
-alias Copng="Co -target image/png"
+alias Ci="wl-copy"
+alias Co="wl-paste"
+alias Coimg="Co --type image"
 
 # MPV
 alias mpv='mpv --player-operation-mode=pseudo-gui'
