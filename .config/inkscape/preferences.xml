@@ -334,8 +334,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="0"
-       y="0"
+       x="413.993154206712"
+       y="336.434645669291"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -600,7 +600,7 @@
     <group
        id="preferences"
        state="1"
-       page="3" />
+       page="51" />
     <group
        id="gradienteditor" />
     <group
@@ -611,9 +611,13 @@
        append_extension="1"
        path="">
       <group
-         id="exportarea" />
+         id="exportarea"
+         value="drawing" />
       <group
          id="defaultxdpi" />
+      <group
+         id="batchexportarea"
+         value="layer" />
     </group>
     <group
        id="save_as"
@@ -971,7 +975,7 @@
        snap-global-toggle="1"
        snap-bbox="1"
        snap-bbox-edge="1"
-       snap-bbox-corner="1"
+       snap-bbox-corner="0"
        snap-bbox-edge-midpoint="0"
        snap-bbox-center="0"
        simple-snap-bbox="1"
@@ -1012,16 +1016,28 @@
      org.inkscape.effect.func_plot.remove="0"
      org.inkscape.effect.func_plot.drawaxis="1"
      org.inkscape.effect.func_plot.__live_effect__="0"
-     org.inkscape.effect.func_plot.fofx="sin(x)"
      org.inkscape.effect.func_plot.endpts="0"
-     org.inkscape.effect.func_plot.xstart="-2"
-     org.inkscape.effect.func_plot.times2pi="1"
-     org.inkscape.effect.func_plot.xend="2"
+     org.inkscape.effect.func_plot.xstart="-15.1"
+     org.inkscape.effect.func_plot.times2pi="0"
+     org.inkscape.effect.func_plot.xend="15"
      org.inkscape.effect.func_plot.ybottom="-5"
-     org.inkscape.effect.func_plot.ytop="5" />
+     org.inkscape.effect.func_plot.ytop="5"
+     org.inkscape.effect.func_plot.tab="sampling"
+     org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5"
+     org.inkscape.output.pdf.cairorenderer.textToPath="LaTeX"
+     org.inkscape.effect.param_curves.__live_effect__="0"
+     org.inkscape.effect.param_curves.remove="0"
+     org.inkscape.effect.param_curves.xleft="-15"
+     org.inkscape.effect.param_curves.xright="15"
+     org.inkscape.effect.param_curves.ybottom="-5"
+     org.inkscape.effect.func_plot.fofx="sin(x)"
+     org.inkscape.effect.param_curves.times2pi="1"
+     org.inkscape.effect.param_curves.ytop="5"
+     org.inkscape.effect.param_curves.drawaxis="0"
+     org.inkscape.effect.param_curves.fofx="pi/2" />
   <group
      id="desktop"
-     style="fill:none;stroke-width:0;-inkscape-font-specification:IPAexMincho;font-family:IPAexMincho">
+     style="fill:none;stroke-width:0;-inkscape-font-specification:'Latin Modern Roman,  Italic';font-family:'Latin Modern Roman';stroke:#000000;stroke-dasharray:3.40157494, 3.40157494;font-style:italic">
     <group
        width="1522"
        height="922"
