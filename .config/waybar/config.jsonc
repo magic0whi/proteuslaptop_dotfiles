@@ -69,8 +69,8 @@
   },
   "backlight": {
     // "device": "acpi_video1",
-    "on-scroll-up": "busctl call org.clightd.clightd /org/clightd/clightd/Backlight2 org.clightd.clightd.Backlight2 Raise 'd(du)' '0.02' '0.00' '0'",
-    "on-scroll-down": "busctl call org.clightd.clightd /org/clightd/clightd/Backlight2 org.clightd.clightd.Backlight2 Lower 'd(du)' '0.02' '0.00' '0'",
+    "on-scroll-up": "brightnessctl set +4%",
+    "on-scroll-down": "brightnessctl set 4%-",
     "format": "{percent}% {icon}",
     "format-icons": [
       "󰽤",

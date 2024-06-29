@@ -29,8 +29,7 @@
 !.config/helix/*
 !.config/hypr/
 !.config/hypr/*
-!.config/maa/
-!.config/maa/**
+!.config/kdeglobals
 !.config/mako/
 !.config/mako/config
 !.config/mpv/
@@ -49,7 +48,6 @@
 !.config/rofi/themes/rounded-blue-dark.rasi
 !.config/systemd/
 !.config/systemd/user/
-!.config/systemd/user/clight.service
 !.config/systemd/user/fcitx5.service
 !.config/systemd/user/hyprland-session.target
 !.config/systemd/user/plasma-polkit-agent.service
