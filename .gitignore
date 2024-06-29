@@ -33,7 +33,6 @@
 !.config/hypr/*
 !.config/inkscape/
 !.config/inkscape/preferences.xml
-!.config/kdeglobals
 !.config/mako/
 !.config/mako/config
 !.config/mpv/
