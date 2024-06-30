@@ -1,12 +1,9 @@
 // -*- mode: jsonc -*-
 [
   {
-    // "layer": "top", // waybar at top layer
-    // "position": "bottom", // waybar position (top|bottom|left|right)
-    "height": 24, // waybar height (to be removed for auto height)
-    // "width": 1280, // waybar width
-    "spacing": 4, // gaps between modules (4px)
-    // choose the order of the modules
+    "margin-top": 6,
+    "margin-left": 4,
+    "margin-right": 4,
     "output": [
       "eDP-1",
       "DP-2"
@@ -30,21 +27,42 @@
       "keyboard-state",
       "battery",
       "clock",
-      "tray"
+      "tray",
+      "privacy"
     ],
     // modules configuration
     "hyprland/workspaces": {
-      "format": "{name}"
+      "format": "{name} {windows}",
+      "show-special": true,
+      "special-visible-only": true,
+      "window-rewrite": {
+        "class<Alacritty>": "&#xf018d;", // console
+        "class<Alacritty> title<.*helix.*>": "&#xf0684;", // dna
+        "class<Anki>": "&#xf0638;", // cards
+        "class<Bitwarden>": "&#xf0bc4;", // shield-key
+        "class<blender>": "&#xf00ab;", // blender-software
+        "class<com.obsproject.Studio>": "&#xf0210;", // fan
+        "class<doublecmd>": "&#xf024b;", // folder
+        "class<firefox>": "&#xf0239;", // firefox
+        "class<firefox> title<.*(bilibili|YouTube).*>": "&#xf07f4;", // television-classic
+        "class<mpv>": "&#xf040c;", // play-circle
+        "class<org.fcitx.fcitx5-config-qt>": "&#xf09f9;", // keyboard-settings
+        "class<org.inkscape.Inkscape>": "&#xf02f5;", // image-filter-hdr
+        "class<org.pwmt.zathura>": "&#xf0f6d;", // music-accidental-sharp
+        "class<org.telegram.desktop>": "&#xf048a;", // send
+        "class<steam>": "&#xf04d3;", // steam
+        "class<waybar>": "&#xf00e4;" // bug
+      }
     },
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
-        "activated": "󰛨",
-        "deactivated": "󱠀"
+        "activated": "&#xf06e8;", // lightbulb-on
+        "deactivated": "&#xf1800;" // lightbulb-auto
       }
     },
     "tray": {
-      // "icon-size": 21,
+      "icon-size": 20,
       "spacing": 10
     },
     "clock": {
@@ -58,19 +76,20 @@
       "tooltip": false
     },
     "memory": {
-      "format": "{}% <span size='x-large' rise='-3000'>󰍛</span>"
+      "format": "{percentage}% <span size='x-large' rise='-3000'>󰍛</span>"
     },
     "temperature": {
       //"thermal-zone": 0,
       "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
       "critical-threshold": 80,
-      "format-critical": "{temperatureC}°c 󰸁",
-      "format": "{temperatureC}°c {icon}",
+      "format-critical": "{temperatureC}&#xb0;C 󰸁",
+      "format": "{temperatureC}&#xb0;C {icon}",
       "format-icons": [
-        "󱃃",
-        "󰔏",
-        "󰔏"
-      ]
+        "&#xf10c3;", // thermometer-low
+        "&#xf050f;", // thermometer
+        "&#xf10c2;" // thermometer-high
+      ],
+      "tooltip": false
     },
     "backlight": {
       // "device": "acpi_video1",
@@ -79,20 +98,21 @@
       //"smooth-scrolling-threshold": 3,
       "format": "{percent}% {icon}",
       "format-icons": [
-        "󰽤",
-        "󰽧",
-        "󰽡",
-        "󰽨",
-        "󰽢"
-      ]
+        "&#xf0f64;", // moon-new
+        "&#xf0f67;", // moon-waxing-crescent
+        "&#xf0f61;", // moon-first-quarter
+        "&#xf0f68;", // moon-waxing-gibbous
+        "&#xf0f62;" // moon-full
+      ],
+      "tooltip": false
     },
     "keyboard-state": {
       "numlock": false,
       "capslock": true,
       "format": "{name} <span size='x-large' rise='-3000'>{icon}</span>",
       "format-icons": {
-        "locked": "󰘲",
-        "unlocked": "󰌎"
+        "locked": "&#xf0632;", // apple-keyboard-caps
+        "unlocked": "&#xf030e;" // keyboard-caps
       }
     },
     "battery": {
@@ -103,21 +123,23 @@
       },
       "format": "{capacity}% {icon}",
       "format-full": "{capacity}% {icon}",
-      "format-charging": "{capacity}% 󰢝",
-      "format-plugged": "{capacity}% 󱰻",
+      "format-charging": "{capacity}% &#xf0084;", // battery-charging
+      "format-plugged": "{capacity}% &#xf1c3b;", // power-plug-battery
       "format-alt": "{time} {power}W {icon}",
       // "format-good": "", // an empty format will hide the module
       // "format-full": "",
       "format-icons": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂"
+        "&#xf10cd;", // battery-alert-variant-outline
+        "&#xf007a;", // battery-10
+        "&#xf007b;", // battery-20
+        "&#xf007c;", // battery-30
+        "&#xf007d;", // battery-40
+        "&#xf007e;", // battery-50
+        "&#xf007f;", // battery-60
+        "&#xf0080;", // battery-70
+        "&#xf0081;", // battery-80
+        "&#xf0082;", // battery-90
+        "&#xf0079;" // battery
       ]
     },
     "power-profiles-daemon": {
@@ -125,46 +147,73 @@
       "tooltip-format": "power profile: {profile}\ndriver: {driver}",
       "tooltip": true,
       "format-icons": {
-        "default": "󰈐",
-        "performance": "󱠇",
-        "balanced": "󰗑",
-        "power-saver": "󱤅"
+        "default": "&#xf0210;", // fan
+        "performance": "&#xf1807;", // fire-circle
+        "balanced": "&#xf1c03;", // bank-circle
+        "power-saver": "&#xf1905;" // leaf-circle
       }
     },
     "network": {
       "interface": "wlp1s0", // (optional) to force the use of this interface
-      "format-wifi": "{essid} ({signalStrength}%) 󰤨",
-      "format-ethernet": "{ipaddr}/{cidr} 󰈀 ",
-      "tooltip-format": "{ifname} via {gwaddr} 󱇢",
-      "format-linked": "{ifname} (no ip) 󰲊",
-      "format-disconnected": "disconnected ⚠",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+      "format-wifi": "{essid} ({signalStrength}%) {icon}",
+      "format-ethernet": "{ipaddr}/{cidr} &#xf0200;", // ethernet
+      "tooltip-format": "{ifname} via {gwaddr} &#xf11e2;", // router
+      "format-linked": "{ifname} (no ip) &#xf06f5;", // help-network
+      "format-disconnected": "disconnected &#xf0c9b;", // network-off
+      "format-alt": "{ifname}: {ipaddr}/{cidr}",
+      "format-icons": [
+        "&#xf092f;", // wifi-strength-outline
+        "&#xf091f;", // wifi-strength-1
+        "&#xf0922;", // wifi-strength-2
+        "&#xf0925;", // wifi-strength-3
+        "&#xf0928;" // wifi-strength-4
+      ]
     },
     "pulseaudio": {
       // "scroll-step": 1, // %, can be a float
       "format": "{volume}% {icon} {format_source}",
-      "format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
-      "format-bluetooth-muted": "󰖁 {icon}󰂯 {format_source}",
-      "format-muted": "󰖁 {format_source}",
-      "format-source": "{volume}% 󰍬",
-      "format-source-muted": "󰍭",
+      "format-bluetooth": "{volume}% {icon}&#xf00af; {format_source}", // bluetooth
+      "format-bluetooth-muted": "&#xf0581;{icon}&#xf00af; {format_source}", // volume-off, bluetooth
+      "format-muted": "&#xf0581; {format_source}", // volume-off
+      "format-source": "{volume}% &#xf036c;", // microphone
+      "format-source-muted": "&#xf036d;", // microphone-off
       "format-icons": {
-        "headphone": "󰋋",
-        "hands-free": "󱡏",
-        "headset": "󰋎",
-        "phone": "󰏲",
-        "portable": "󰄜",
-        "car": "󰄍",
+        "headphone": "&#xf02cb;", // headphones
+        "hands-free": "&#xf184f;", // earbuds
+        "headset": "&#xf02ce;", // headset
+        "phone": "&#xf03f2;", // phone
+        "portable": "&#xf011c;", // cellphone
+        "car": "&#xf010b;", // car
         "default": [
-          "󰝞",
-          "󰕿",
-          "󰖀",
-          "󰕾",
-          "󱄡"
+          "&#xf057f;", // volume-low
+          "&#xf0580;", // volume-medium
+          "&#xf057e;" // volume-high
         ]
       },
       "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+    "privacy": {
+      "icon-spacing": 4,
+      "icon-size": 18,
+      "transition-duration": 250,
+      "modules": [
+        {
+          "type": "screenshare",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        },
+        {
+          "type": "audio-out",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        },
+        {
+          "type": "audio-in",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        }
+      ]
     }
   },
   {
