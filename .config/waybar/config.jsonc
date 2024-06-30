@@ -32,10 +32,11 @@
     ],
     // modules configuration
     "hyprland/workspaces": {
-      "format": "{name} {windows}",
+      "format": "<span rise='-1000'>{name} {windows}</span><span size='x-large'>&#x200b;</span>", // zero width space
       "show-special": true,
       "special-visible-only": true,
       "window-rewrite": {
+        "class<ario>": "&#xf0386;", // music-circle
         "class<Alacritty>": "&#xf018d;", // console
         "class<Alacritty> title<.*helix.*>": "&#xf0684;", // dna
         "class<Anki>": "&#xf0638;", // cards
@@ -66,24 +67,24 @@
       "spacing": 10
     },
     "clock": {
-      "format": "{:%H:%M:%S}",
-      "format-alt": "{:%m-%d-%y}",
+      "format": "<span rise='-1000'>{:%H:%M:%S}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "format-alt": "<span rise='-1000'>{:%m-%d-%y}</span><span size='x-large'>&#x200b;</span>", // zero width space
       "interval": 1,
       "tooltip-format": "<big>{:%y %b}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
-      "format": "{usage}% <span size='x-large' rise='-3000'>󰻠</span>",
+      "format": "{usage}% <span size='x-large' rise='-3500'>&#xf0ee0;</span>", // cpu-64-bit
       "tooltip": false
     },
     "memory": {
-      "format": "{percentage}% <span size='x-large' rise='-3000'>󰍛</span>"
+      "format": "{percentage}% <span size='x-large' rise='-3500'>&#xf035b;</span>" // memory
     },
     "temperature": {
       //"thermal-zone": 0,
       "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
       "critical-threshold": 80,
-      "format-critical": "{temperatureC}&#xb0;C 󰸁",
-      "format": "{temperatureC}&#xb0;C {icon}",
+      "format-critical": "<span rise='-1000'>{temperatureC}&#xb0;C</span> <span size='large' rise='-2000'>&#xf0e01;</span><span size='x-large'>&#x200b;</span>", // thermometer-alert, zero width space
+      "format": "<span rise='-1000'>{temperatureC}&#xb0;C</span> <span size='large' rise='-2000'>{icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
       "format-icons": [
         "&#xf10c3;", // thermometer-low
         "&#xf050f;", // thermometer
@@ -96,7 +97,7 @@
       "on-scroll-up": "brightnessctl set +4%",
       "on-scroll-down": "brightnessctl set 4%-",
       //"smooth-scrolling-threshold": 3,
-      "format": "{percent}% {icon}",
+      "format": "<span rise='-1000'>{percent}%</span> <span size='large' rise='-2000'>{icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
       "format-icons": [
         "&#xf0f64;", // moon-new
         "&#xf0f67;", // moon-waxing-crescent
@@ -109,7 +110,7 @@
     "keyboard-state": {
       "numlock": false,
       "capslock": true,
-      "format": "{name} <span size='x-large' rise='-3000'>{icon}</span>",
+      "format": "<span rise='1000'>{name}</span> <span size='x-large' rise='-3000'>{icon}</span>",
       "format-icons": {
         "locked": "&#xf0632;", // apple-keyboard-caps
         "unlocked": "&#xf030e;" // keyboard-caps
@@ -121,11 +122,11 @@
         "warning": 30,
         "critical": 15
       },
-      "format": "{capacity}% {icon}",
+      "format": "<span rise='-1000'>{capacity}% {icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
       "format-full": "{capacity}% {icon}",
-      "format-charging": "{capacity}% &#xf0084;", // battery-charging
+      "format-charging": "<span rise='-1000'>{capacity}% &#xf0084;</span><span size='x-large'>&#x200b;</span>", // battery-charging, zero width space
       "format-plugged": "{capacity}% &#xf1c3b;", // power-plug-battery
-      "format-alt": "{time} {power}W {icon}",
+      "format-alt": "<span rise='-1000'>{time} {power}W {icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
       // "format-good": "", // an empty format will hide the module
       // "format-full": "",
       "format-icons": [
@@ -154,13 +155,14 @@
       }
     },
     "network": {
-      "interface": "wlp1s0", // (optional) to force the use of this interface
-      "format-wifi": "{essid} ({signalStrength}%) {icon}",
+      "interface": "wlp1s0",
+      "format-wifi": "{icon}",
       "format-ethernet": "{ipaddr}/{cidr} &#xf0200;", // ethernet
+      "format-linked": "{ifname} (no ip) &#xf0318;", // lan-connect
+      "format-disconnected": "disconnected &#xf0319;", // lan-disconnect
+      "format-alt": "<span rise='-1000'>{ifname}: {ipaddr}/{cidr}</span><span size='x-large'>&#x200b;</span>", // zero width space
       "tooltip-format": "{ifname} via {gwaddr} &#xf11e2;", // router
-      "format-linked": "{ifname} (no ip) &#xf06f5;", // help-network
-      "format-disconnected": "disconnected &#xf0c9b;", // network-off
-      "format-alt": "{ifname}: {ipaddr}/{cidr}",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} via {gwaddr} &#xf11e2;",
       "format-icons": [
         "&#xf092f;", // wifi-strength-outline
         "&#xf091f;", // wifi-strength-1
@@ -171,14 +173,14 @@
     },
     "pulseaudio": {
       // "scroll-step": 1, // %, can be a float
-      "format": "{volume}% {icon} {format_source}",
-      "format-bluetooth": "{volume}% {icon}&#xf00af; {format_source}", // bluetooth
-      "format-bluetooth-muted": "&#xf0581;{icon}&#xf00af; {format_source}", // volume-off, bluetooth
-      "format-muted": "&#xf0581; {format_source}", // volume-off
-      "format-source": "{volume}% &#xf036c;", // microphone
-      "format-source-muted": "&#xf036d;", // microphone-off
+      "format": "<span rise='-1000'>{volume}% {icon} {format_source}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "format-muted": "<span rise='-1000'>&#xf0581; {format_source}</span><span size='x-large'>&#x200b;</span>", // volume-off, zero width space
+      "format-bluetooth": "<span rise='-1000'>{volume}% {icon}<span rise='-1250'>&#xf00af;</span> {format_source}</span><span size='x-large'>&#x200b;</span>", // bluetooth, zero width space
+      "format-bluetooth-muted": "<span rise='-1000'><span rise='-1500'>&#xf0581;</span>{icon}<span rise='-1250'>&#xf00af;</span> {format_source}</span><span size='x-large'>&#x200b;</span>", // volume-off, bluetooth, zero width space
+      "format-source": "{volume}% <span rise='-1500'>&#xf036c;</span>", // microphone
+      "format-source-muted": "<span rise='-1500'>&#xf036d;</span>", // microphone-off
       "format-icons": {
-        "headphone": "&#xf02cb;", // headphones
+        "headphone": "<span rise='-2000'>&#xf02cb;</span>", // headphones
         "hands-free": "&#xf184f;", // earbuds
         "headset": "&#xf02ce;", // headset
         "phone": "&#xf03f2;", // phone
@@ -227,29 +229,51 @@
     ],
     "position": "bottom",
     "hyprland/workspaces": {
-      "format": "{name}"
+      "format": "<span rise='-1000'>{name} {windows}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "show-special": true,
+      "special-visible-only": true,
+      "window-rewrite": {
+        "class<ario>": "&#xf0386;", // music-circle
+        "class<Alacritty>": "&#xf018d;", // console
+        "class<Alacritty> title<.*helix.*>": "&#xf0684;", // dna
+        "class<Anki>": "&#xf0638;", // cards
+        "class<Bitwarden>": "&#xf0bc4;", // shield-key
+        "class<blender>": "&#xf00ab;", // blender-software
+        "class<com.obsproject.Studio>": "&#xf0210;", // fan
+        "class<doublecmd>": "&#xf024b;", // folder
+        "class<firefox>": "&#xf0239;", // firefox
+        "class<firefox> title<.*(bilibili|YouTube).*>": "&#xf07f4;", // television-classic
+        "class<mpv>": "&#xf040c;", // play-circle
+        "class<org.fcitx.fcitx5-config-qt>": "&#xf09f9;", // keyboard-settings
+        "class<org.inkscape.Inkscape>": "&#xf02f5;", // image-filter-hdr
+        "class<org.pwmt.zathura>": "&#xf0f6d;", // music-accidental-sharp
+        "class<org.telegram.desktop>": "&#xf048a;", // send
+        "class<steam>": "&#xf04d3;", // steam
+        "class<waybar>": "&#xf00e4;" // bug
+      }
     },
     "mpd": {
-      "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚",
-      "format-disconnected": "Disconnected 󰌙",
-      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰝛",
+      "title-len": 10,
+      "format": "<span rise='-1000'>{stateIcon}{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) &#xf075a;</span><span size='x-large'>&#x200b;</span>", // music, zero width space
+      "format-disconnected": "<span rise='-1000'>Disconnected &#xf0319;</span><span size='x-large'>&#x200b;</span>", // lan-disconnect, zero width space
+      "format-stopped": "<span rise='-1000'>{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped &#xf075b;</span><span size='x-large'>&#x200b;</span>", // music-off, zero width space
       "interval": 10,
       "consume-icons": {
-        "on": "󰆐"
+        "on": "&#xf0190;" // content-cut
       },
       "random-icons": {
-        "off": "󰒞", // Icon named Shuffle
-        "on": "󰒝"
+        "off": "&#xf049e;", // shuffle-disabled
+        "on": "&#xf049d;" // shuffle
       },
       "repeat-icons": {
-        "on": "󰑖"
+        "on": "&#xf0456;" // repeat
       },
       "single-icons": {
-        "on": "󰑘"
+        "on": "&#xf0458;" // repeat-once
       },
       "state-icons": {
-        "paused": "󰏤",
-        "playing": "󰐊"
+        "paused": "&#xf03e4;", // pause
+        "playing": "&#xf040a;" // play
       },
       "tooltip-format": "MPD (connected)",
       "tooltip-format-disconnected": "MPD (disconnected)"
