@@ -170,12 +170,16 @@
   {
     "output": "DP-3",
     "modules-left": [
+      "hyprland/workspaces",
       "mpd"
     ],
     "modules-right": [
       "privacy"
     ],
     "position": "bottom",
+    "hyprland/workspaces": {
+      "format": "{name}"
+    },
     "mpd": {
       "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚",
       "format-disconnected": "Disconnected 󰌙",

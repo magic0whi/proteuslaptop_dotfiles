@@ -1,14 +1,20 @@
 /* Run 'waybar -l debug' to viewing the widget tree */
 /* https://www.w3.org/TR/selectors-3 */
 /* https://docs.gtk.org/gtk3/css-properties.html */
+/* https://docs.gtk.org/gtk3/css-overview.html#colors */
 /* Specificity
 a = Number of ID selectors
 b = number of class selectors
 c = number of type selectors
 */
-* {
-  border-radius: 8px;
-}
+@define-color gruvbox-bg #282828;
+@define-color gruvbox-fg #ebdbb2;
+@define-color gruvbox-red #cc241d;
+@define-color gruvbox-green #98971a;
+@define-color gruvbox-yellow #d79921;
+@define-color gruvbox-blue #458588;
+@define-color gruvbox-purple #b16286;
+@define-color gruvbox-gray #a89984;
 
 window#waybar {
   background-color: transparent;
@@ -16,25 +22,36 @@ window#waybar {
   font-size: 13px;
 }
 
+/* HiDPI adjustments for DP-3 START */
 window#waybar.DP-3 {
   font-size: 22px;
 }
 
+window#waybar.DP-3 widget:first-child .module {
+  margin-left: 0;
+}
+
+window#waybar.DP-3 widget .module {
+  margin: 5px;
+}
+
+/* HiDPI adjustments for DP-3 END */
+
 tooltip {
-  background: #282828;
-  border: 2px solid #665c54;
+  background: @gruvbox-bg;
+  border: 2px solid @gruvbox-gray;
   font-size: 13px;
 }
 
 tooltip label {
-  color: #ebdbb2;
+  color: @gruvbox-fg;
 }
 
-.modules-left widget:first-child>box {
+.modules-left widget:first-child .module {
   margin-left: 6px;
 }
 
-.modules-right widget:last-child>box {
+.modules-right widget:last-child .module {
   margin-right: 6px;
 }
 
@@ -65,8 +82,9 @@ tooltip label {
 #tray,
 #window,
 #workspaces {
-  background-color: #282828;
-  color: #ebdbb2;
+  background-color: @gruvbox-bg;
+  border-radius: 8px;
+  color: @gruvbox-fg;
   padding: 0 5px;
   transition-property: background-color;
   transition-duration: .5s;
@@ -74,21 +92,21 @@ tooltip label {
 
 #battery.charging,
 #battery.plugged {
-  color: #282828;
-  background-color: #98971a;
+  color: @gruvbox-bg;
+  background-color: @gruvbox-green;
 }
 
 @keyframes blink {
   to {
-    background-color: #282828;
-    color: #ebdbb2;
+    background-color: @gruvbox-bg;
+    color: @gruvbox-fg;
   }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-  background-color: #cc241d;
-  color: #ebdbb2;
+  background-color: @gruvbox-red;
+  color: @gruvbox-fg;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -97,13 +115,13 @@ tooltip label {
 }
 
 #clock:hover {
-  background-color: #d79921;
-  color: #282828;
+  background-color: @gruvbox-yellow;
+  color: @gruvbox-bg;
 }
 
 #idle_inhibitor.activated {
-  background-color: #ebdbb2;
-  color: #282828;
+  background-color: @gruvbox-fg;
+  color: @gruvbox-bg;
 }
 
 #keyboard-state {
@@ -115,63 +133,62 @@ tooltip label {
 }
 
 #keyboard-state>label.locked {
-  background: #ebdbb2;
-  color: #282828;
+  background: @gruvbox-fg;
+  color: @gruvbox-bg;
 }
 
 #mpd {
-  background-color: #282828;
-  color: #ebdbb2;
+  background-color: @gruvbox-bg;
+  color: @gruvbox-fg;
 }
 
 #mpd.disconnected {
-  background-color: #cc241d;
+  background-color: @gruvbox-red;
 }
 
 #mpd.paused {
-  background-color: #665c54;
+  background-color: @gruvbox-gray;
 }
 
 #mpd.stopped {
-  background-color: #ebdbb2;
-  color: #282828;
+  background-color: @gruvbox-fg;
+  color: @gruvbox-bg;
 }
 
 #network.disconnected {
-  background-color: #cc241d;
+  background-color: @gruvbox-red;
 }
 
 #power-profiles-daemon.performance {
-  background-color: #cc241d;
-  color: #ebdbb2;
+  background-color: @gruvbox-red;
+  color: @gruvbox-fg;
 }
 
 #power-profiles-daemon.balanced {
-  background-color: #2980b9;
-  color: #ebdbb2;
+  background-color: @gruvbox-blue;
+  color: @gruvbox-fg;
 }
 
 #power-profiles-daemon.power-saver {
-  background-color: #98971a;
-  color: #282828;
+  background-color: @gruvbox-green;
+  color: @gruvbox-bg;
 }
 
 #pulseaudio:hover {
-  background-color: #d79921;
-  color: #282828;
+  background-color: @gruvbox-yellow;
+  color: @gruvbox-bg;
 }
 
 #pulseaudio.muted {
-  background-color: #90b1b1;
-  color: #2a5c45;
+  color: @gruvbox-gray;
 }
 
 #temperature.critical {
-  background-color: #cc241d;
+  background-color: @gruvbox-red;
 }
 
 #tray {
-  background-color: #ebdbb2;
+  background-color: @gruvbox-fg;
 }
 
 #tray>.passive {
@@ -180,7 +197,7 @@ tooltip label {
 
 #tray>.needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+  background-color: @gruvbox-red;
 }
 
 #window,
@@ -190,9 +207,9 @@ tooltip label {
 }
 
 #workspaces button {
-  background-color: #282828;
+  background-color: @gruvbox-bg;
   border-radius: 0;
-  color: #ebdbb2;
+  color: @gruvbox-fg;
   padding: 0 5px;
 }
 
@@ -209,18 +226,19 @@ tooltip label {
 }
 
 #workspaces button:hover {
-  background: #d79921;
-  box-shadow: inset 0 -3px #ebdbb2;
-  color: #282828;
+  background: @gruvbox-yellow;
+  box-shadow: inset 0 -3px @gruvbox-fg;
+  color: @gruvbox-bg;
 }
 
 /* focused */
 #workspaces button.active {
-  background-color: #665c54;
+  background-color: @gruvbox-gray;
+  color: @gruvbox-bg;
 }
 
 #workspaces button.urgent {
-  background-color: #b16286;
+  background-color: @gruvbox-purple;
 }
 
 /* When no windows are in the workspace */
@@ -235,8 +253,8 @@ tooltip label {
 
 #privacy {
   padding: 0;
-  background-color: #ebdbb2;
-  color: #282828;
+  background-color: @gruvbox-fg;
+  color: @gruvbox-bg;
 }
 
 #privacy-item {
