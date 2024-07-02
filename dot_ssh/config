@@ -1,0 +1,16 @@
+Host *
+    # Send keep-alive every 30s, disconnect if sent 5 times with no response
+    ServerAliveInterval 30
+    ServerAliveCountMax 5
+    Compression yes
+    # Share multiple ssh session along one connection, this reduce the time cost on reconnection
+    ControlMaster auto
+    ControlPath /tmp/ssh-%r@%h:%p
+    # Increase the valid time of a connection
+    ControlPersist 30m
+Host github.com
+    User git
+    IdentityFile /home/proteus/sync-work/3keys/proteus_ed25519.key
+
+Host proteusdesktop proteusnotebook 192.168.15.11
+    IdentityFile /home/proteus/sync-work/3keys/proteus_ed25519.key

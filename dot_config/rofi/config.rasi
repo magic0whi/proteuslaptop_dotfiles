@@ -1,0 +1,7 @@
+configuration {
+    dpi: 96;
+    modes: "window,drun,ssh,combi";
+    combi-modes: "window,drun,ssh";
+    show-icons: true;
+}
+@theme "/home/proteus/.config/rofi/themes/rounded-blue-dark.rasi"

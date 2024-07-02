@@ -1,0 +1,11 @@
+theme = 'gruvbox'
+
+[editor]
+line-number = 'relative'
+soft-wrap.enable = true
+
+[editor.whitespace]
+render = 'all'
+
+[keys.insert]
+"C-c" = "normal_mode"

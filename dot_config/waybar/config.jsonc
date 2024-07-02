@@ -1,0 +1,306 @@
+// -*- mode: jsonc -*-
+[
+  {
+    "margin-top": 6,
+    "margin-left": 4,
+    "margin-right": 4,
+    "output": [
+      "eDP-1",
+      "DP-2"
+    ],
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "idle_inhibitor",
+      "pulseaudio",
+      "network",
+      "power-profiles-daemon",
+      "cpu",
+      "memory",
+      "temperature",
+      "backlight",
+      "keyboard-state",
+      "battery",
+      "clock",
+      "tray",
+      "privacy"
+    ],
+    // modules configuration
+    "hyprland/workspaces": {
+      "format": "<span rise='-1000'>{name} {windows}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "show-special": true,
+      "special-visible-only": true,
+      "window-rewrite": {
+        "class<ario>": "&#xf0386;", // music-circle
+        "class<Alacritty>": "&#xf018d;", // console
+        "class<Alacritty> title<.*helix.*>": "&#xf0684;", // dna
+        "class<Anki>": "&#xf0638;", // cards
+        "class<Bitwarden>": "&#xf0bc4;", // shield-key
+        "class<blender>": "&#xf00ab;", // blender-software
+        "class<com.obsproject.Studio>": "&#xf0210;", // fan
+        "class<doublecmd>": "&#xf024b;", // folder
+        "class<firefox>": "&#xf0239;", // firefox
+        "class<firefox> title<.*(bilibili|YouTube).*>": "&#xf07f4;", // television-classic
+        "class<hyprland-share-picker>": "&#xf0496;", // share
+        "class<mpv>": "&#xf040c;", // play-circle
+        "class<org.fcitx.fcitx5-config-qt>": "&#xf09f9;", // keyboard-settings
+        "class<org.inkscape.Inkscape>": "&#xf02f5;", // image-filter-hdr
+        "class<org.pwmt.zathura>": "&#xf0f6d;", // music-accidental-sharp
+        "class<org.telegram.desktop>": "&#xf048a;", // send
+        "class<steam>": "&#xf04d3;", // steam
+        "class<waybar>": "&#xf00e4;" // bug
+      }
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "&#xf06e8;", // lightbulb-on
+        "deactivated": "&#xf1800;" // lightbulb-auto
+      }
+    },
+    "tray": {
+      "icon-size": 20,
+      "spacing": 10
+    },
+    "clock": {
+      "format": "<span rise='-1000'>{:%H:%M:%S}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "format-alt": "<span rise='-1000'>{:%m-%d-%y}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "interval": 1,
+      "tooltip-format": "<big>{:%y %b}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+      "format": "{usage}% <span size='x-large' rise='-3500'>&#xf0ee0;</span>", // cpu-64-bit
+      "tooltip": false
+    },
+    "memory": {
+      "format": "{percentage}% <span size='x-large' rise='-3500'>&#xf035b;</span>" // memory
+    },
+    "temperature": {
+      //"thermal-zone": 0,
+      "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+      "critical-threshold": 80,
+      "format-critical": "<span rise='-1000'>{temperatureC}&#xb0;C</span> <span size='large' rise='-2000'>&#xf0e01;</span><span size='x-large'>&#x200b;</span>", // thermometer-alert, zero width space
+      "format": "<span rise='-1000'>{temperatureC}&#xb0;C</span> <span size='large' rise='-2000'>{icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "format-icons": [
+        "&#xf10c3;", // thermometer-low
+        "&#xf050f;", // thermometer
+        "&#xf10c2;" // thermometer-high
+      ],
+      "tooltip": false
+    },
+    "backlight": {
+      // "device": "acpi_video1",
+      "on-scroll-up": "brightnessctl set +4%",
+      "on-scroll-down": "brightnessctl set 4%-",
+      //"smooth-scrolling-threshold": 3,
+      "format": "<span rise='-1000'>{percent}%</span> <span size='large' rise='-2000'>{icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "format-icons": [
+        "&#xf0f64;", // moon-new
+        "&#xf0f67;", // moon-waxing-crescent
+        "&#xf0f61;", // moon-first-quarter
+        "&#xf0f68;", // moon-waxing-gibbous
+        "&#xf0f62;" // moon-full
+      ],
+      "tooltip": false
+    },
+    "keyboard-state": {
+      "numlock": false,
+      "capslock": true,
+      "format": "<span rise='1000'>{name}</span> <span size='x-large' rise='-3000'>{icon}</span>",
+      "format-icons": {
+        "locked": "&#xf0632;", // apple-keyboard-caps
+        "unlocked": "&#xf030e;" // keyboard-caps
+      }
+    },
+    "battery": {
+      "states": {
+        // "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "<span rise='-1000'>{capacity}% {icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "format-full": "{capacity}% {icon}",
+      "format-charging": "<span rise='-1000'>{capacity}% &#xf0084;</span><span size='x-large'>&#x200b;</span>", // battery-charging, zero width space
+      "format-plugged": "<span rise='-1000'>{capacity}% &#xf1c3b;</span><span size='x-large'>&#x200b;</span>", // power-plug-battery
+      "format-alt": "<span rise='-1000'>{time} {power}W {icon}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      // "format-good": "", // an empty format will hide the module
+      // "format-full": "",
+      "format-icons": [
+        "&#xf10cd;", // battery-alert-variant-outline
+        "&#xf007a;", // battery-10
+        "&#xf007b;", // battery-20
+        "&#xf007c;", // battery-30
+        "&#xf007d;", // battery-40
+        "&#xf007e;", // battery-50
+        "&#xf007f;", // battery-60
+        "&#xf0080;", // battery-70
+        "&#xf0081;", // battery-80
+        "&#xf0082;", // battery-90
+        "&#xf0079;" // battery
+      ]
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "power profile: {profile}\ndriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "&#xf0210;", // fan
+        "performance": "&#xf1807;", // fire-circle
+        "balanced": "&#xf1c03;", // bank-circle
+        "power-saver": "&#xf1905;" // leaf-circle
+      }
+    },
+    "network": {
+      "interface": "wlp1s0",
+      "format-wifi": "{icon}",
+      "format-ethernet": "{ipaddr}/{cidr} &#xf0200;", // ethernet
+      "format-linked": "{ifname} (no ip) &#xf0318;", // lan-connect
+      "format-disconnected": "disconnected &#xf0319;", // lan-disconnect
+      "format-alt": "<span rise='-1000'>{ifname}: {ipaddr}/{cidr}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "tooltip-format": "{ifname} via {gwaddr} &#xf11e2;", // router
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} via {gwaddr} &#xf11e2;",
+      "format-icons": [
+        "&#xf092f;", // wifi-strength-outline
+        "&#xf091f;", // wifi-strength-1
+        "&#xf0922;", // wifi-strength-2
+        "&#xf0925;", // wifi-strength-3
+        "&#xf0928;" // wifi-strength-4
+      ]
+    },
+    "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "<span rise='-1000'>{volume}% {icon} {format_source}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "format-muted": "<span rise='-1000'>&#xf0581; {format_source}</span><span size='x-large'>&#x200b;</span>", // volume-off, zero width space
+      "format-bluetooth": "<span rise='-1000'>{volume}% {icon}<span rise='-1250'>&#xf00af;</span> {format_source}</span><span size='x-large'>&#x200b;</span>", // bluetooth, zero width space
+      "format-bluetooth-muted": "<span rise='-1000'><span rise='-1500'>&#xf0581;</span>{icon}<span rise='-1250'>&#xf00af;</span> {format_source}</span><span size='x-large'>&#x200b;</span>", // volume-off, bluetooth, zero width space
+      "format-source": "{volume}% <span rise='-1500'>&#xf036c;</span>", // microphone
+      "format-source-muted": "<span rise='-1500'>&#xf036d;</span>", // microphone-off
+      "format-icons": {
+        "headphone": "<span rise='-2000'>&#xf02cb;</span>", // headphones
+        "hands-free": "&#xf184f;", // earbuds
+        "headset": "&#xf02ce;", // headset
+        "phone": "&#xf03f2;", // phone
+        "portable": "&#xf011c;", // cellphone
+        "car": "&#xf010b;", // car
+        "default": [
+          "&#xf057f;", // volume-low
+          "&#xf0580;", // volume-medium
+          "&#xf057e;" // volume-high
+        ]
+      },
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+    "privacy": {
+      "icon-spacing": 4,
+      "icon-size": 18,
+      "transition-duration": 250,
+      "modules": [
+        {
+          "type": "screenshare",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        },
+        {
+          "type": "audio-out",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        },
+        {
+          "type": "audio-in",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        }
+      ]
+    }
+  },
+  {
+    "output": "DP-3",
+    "modules-left": [
+      "hyprland/workspaces",
+      "mpd"
+    ],
+    "modules-right": [
+      "privacy"
+    ],
+    "position": "bottom",
+    "hyprland/workspaces": {
+      "format": "<span rise='-1000'>{name} {windows}</span><span size='x-large'>&#x200b;</span>", // zero width space
+      "show-special": true,
+      "special-visible-only": true,
+      "window-rewrite": {
+        "class<ario>": "&#xf0386;", // music-circle
+        "class<Alacritty>": "&#xf018d;", // console
+        "class<Alacritty> title<.*helix.*>": "&#xf0684;", // dna
+        "class<Anki>": "&#xf0638;", // cards
+        "class<Bitwarden>": "&#xf0bc4;", // shield-key
+        "class<blender>": "&#xf00ab;", // blender-software
+        "class<com.obsproject.Studio>": "&#xf0210;", // fan
+        "class<doublecmd>": "&#xf024b;", // folder
+        "class<firefox>": "&#xf0239;", // firefox
+        "class<firefox> title<.*(bilibili|YouTube).*>": "&#xf07f4;", // television-classic
+        "class<hyprland-share-picker>": "&#xf0496;", // share
+        "class<mpv>": "&#xf040c;", // play-circle
+        "class<org.fcitx.fcitx5-config-qt>": "&#xf09f9;", // keyboard-settings
+        "class<org.inkscape.Inkscape>": "&#xf02f5;", // image-filter-hdr
+        "class<org.pwmt.zathura>": "&#xf0f6d;", // music-accidental-sharp
+        "class<org.telegram.desktop>": "&#xf048a;", // send
+        "class<steam>": "&#xf04d3;", // steam
+        "class<waybar>": "&#xf00e4;" // bug
+      }
+    },
+    "mpd": {
+      "title-len": 10,
+      "format": "<span rise='-1000'>{stateIcon}{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) &#xf075a;</span><span size='x-large'>&#x200b;</span>", // music, zero width space
+      "format-disconnected": "<span rise='-1000'>Disconnected &#xf0319;</span><span size='x-large'>&#x200b;</span>", // lan-disconnect, zero width space
+      "format-stopped": "<span rise='-1000'>{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped &#xf075b;</span><span size='x-large'>&#x200b;</span>", // music-off, zero width space
+      "interval": 10,
+      "consume-icons": {
+        "on": "&#xf0190;" // content-cut
+      },
+      "random-icons": {
+        "off": "&#xf049e;", // shuffle-disabled
+        "on": "&#xf049d;" // shuffle
+      },
+      "repeat-icons": {
+        "on": "&#xf0456;" // repeat
+      },
+      "single-icons": {
+        "on": "&#xf0458;" // repeat-once
+      },
+      "state-icons": {
+        "paused": "&#xf03e4;", // pause
+        "playing": "&#xf040a;" // play
+      },
+      "tooltip-format": "MPD (connected)",
+      "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "privacy": {
+      "icon-spacing": 4,
+      "icon-size": 18,
+      "transition-duration": 250,
+      "modules": [
+        {
+          "type": "screenshare",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        },
+        {
+          "type": "audio-out",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        },
+        {
+          "type": "audio-in",
+          "tooltip": true,
+          "tooltip-icon-size": 22
+        }
+      ]
+    }
+  }
+]

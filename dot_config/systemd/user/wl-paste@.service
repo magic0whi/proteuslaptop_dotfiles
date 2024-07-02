@@ -1,0 +1,15 @@
+[Unit]
+Description=Command-line copy/paste utilities for Wayland, works on MIME type %i
+Documentation=man:wl-clipboard(1)
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+ExecStart=/usr/bin/wl-paste --type %i --watch cliphist store
+Restart=on-failure
+RestartSec=1s
+Slice=background.slice
+
+[Install]
+WantedBy=graphical-session.target
